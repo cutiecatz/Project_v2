@@ -27,7 +27,7 @@ $result = mysqli_query($conn,$userQuery);
             <tr>
             <?php echo "<td>".$row['storage_name']."</td>" ?>
             <?php echo "<td><a href=\"storagedetail.php?id=".$row['storage_id']."\"> " ?> 
-            <span class="fas fa-eye"></a></td>
+            <span class="fas fa-edit"></a></td>
             <?php echo "<td><a href=\"plant_delete.php?id=".$row['storage_id']."\"> "?>
             <span class="fas fa-trash-alt"></a></td>
             <br>
