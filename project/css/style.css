@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #383a3a;
+    margin: 0;
+}
+
+.luxury {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.3em;
+}
+
+.text-block {
+    position: absolute;
+    top: 22%;
+    right: 0%;
+    background-color: rgba(0, 0, 0, 0.700);
+}
+
+.text-block p,
+h2 {
+    color: white;
+    width: 600px;
+    padding: 25px;
+    margin: 15px;
+}
+
+.sidebar {
+    position: fixed;
+    width: 250px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #111;
+    padding-top: 50px;
+}
+
+.sidebar h1 {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Rubik";
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin: 0;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px 20px;
+    color: #bbb;
+    text-decoration: none;
+    font-family: "Rubik";
+    letter-spacing: 2px;
+}
+
+.sidebar a:hover {
+    color: #fff;
+    background-color: #383a3a;
+    transition: 0.4s;
+}
+
+footer {
+    bottom: 0px;
+    width: 100%;
+    background: white;
+}
+
+.main-content {
+    display: flex;
+}
+
+.main-content .box {
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+
+.box h2 {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.box .contents {
+    margin: 20px 0 0 0;
+    position: relative;
+    text-align: center;
+}
+
+.left .contents .social {
+    margin: 20px 0 0 0;
+}
+
+.left .contents .social a {
+    padding: 0 2px;
+}
+
+.left .contents .social a span {
+    height: 40px;
+    width: 40px;
+    background: white;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.left .contents .social a span:hover {
+    background: #95c1df;
+}
+
+.right .contents .fas {
+    font-size: 1.4375rem;
+    background: white;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.right .contents .fas:hover {
+    background: #95c1df;
+}
+
+.right .contents .text {
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.right .contents .phone {
+    margin: 15px 0;
+}

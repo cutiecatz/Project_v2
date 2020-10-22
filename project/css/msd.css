@@ -1,0 +1,55 @@
+body
+{
+    background-color: whitesmoke;
+}
+.head
+{
+    color: #a99488;
+    font-family : sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+.box
+{
+    background-color: #d3d3d3;
+    height: 500px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+li {
+    display: inline;
+  }
+
+.opt
+{
+    color: #616161; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  .wel
+  {
+      color : #2874A6;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size:30px;
+      margin-left: 100px;
+      
+  }
+ul {  list-style: none;
+    caption-side: initial;}
+
+.navbar a{
+    text-decoration: none;
+    font-size: 110%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 5%;
+    color:#616161;
+}
+.is
+{
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 8px;
+    font-weight: lighter;
+
+}

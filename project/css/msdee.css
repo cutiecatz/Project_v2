@@ -1,0 +1,63 @@
+body {
+    background-color: #D3D3D3;
+    padding-right: 250px;
+}
+
+.head {
+    color: #a99488;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+.box {
+    background-color: #d3d3d3;
+    height: 500px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.opt {
+    color: #616161;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul {
+    list-style: none;
+    caption-side: initial;
+}
+
+nav {
+    float: left;
+    width: 250px;
+    height: 300px;
+    /* only for demonstration, should be removed */
+    background: #ccc;
+    padding: 20px;
+}
+
+
+/* Style the list inside the menu */
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+table,
+td {
+    border: 3px solid black;
+    border-collapse: collapse;
+    margin-left: 315px;
+    padding: 10px;
+}
+
+.phead
+{
+ font-family: Georgia, 'Times New Roman', Times, serif ;
+ color: goldenrod;
+ text-align: center;
+ font-size: 3em;
+ margin-left: 15cm;
+}
