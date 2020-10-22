@@ -19,7 +19,7 @@ $result = mysqli_query($conn,$userQuery);
         <table style="width:90%">
       <tr>
           <th> Company Code</th>
-          <th> Name</th>
+          <th> Names</th>
           <th> Address</th>
           <th> Telephone</th>
           <th> E-mail</th>
