@@ -10,7 +10,7 @@ require("server.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<h1 class="head">Add Customer</h1>
+<h1 class="head">Add Vendor</h1>
 <div class="container">
   <form action="vendor_add.php">
  
