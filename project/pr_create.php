@@ -26,11 +26,12 @@ $c=1;
     <select name="com" id="com">
     <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
         <option value="<?php $i=1; echo "$c"; ?>"> <?php echo $row['company_code']; $c+=$c?> </option>
-     <?php } ?>
-    
-    <label for="id">Purchase Requisition Date</label>
-    <input type="text" name="date" placeholder="your date...">
-   
+    <?php } ?></select>
+    <br>
+    <label for="date">Purchase Requisition Date</label>
+    <br><br>
+    <input type="date" name="date" placeholder="your date...">
+        <br><br>
     <td><input type="submit" value="submit"/></td>
     <td><input type="reset" value="reset"/></td>
 
