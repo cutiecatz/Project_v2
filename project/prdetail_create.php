@@ -1,4 +1,5 @@
 <?php
+require "navbar.php";
 require_once "server.php";
 
 $pr_id = $_GET['id'];
