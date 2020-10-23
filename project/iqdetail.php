@@ -26,7 +26,6 @@ $result = mysqli_query($conn,$userQuery);
                       </tr>
                       <?php while ($row = mysqli_fetch_assoc($result)) { ?>     
                  <tr>
-                 
                         <?php echo "<td>".$row['product_name']."</td>" ?>
                         <?php echo "<td>".$row['product_descrip']."</td>" ?>
                         <?php echo "<td>".$row['product_qty']."</td>" ?>
