@@ -10,10 +10,10 @@ $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {
     die ("Could not successfully run the query $userQuery ".mysqli_error($conn));
-    header("location: iq.php");
+    header("location: pick.php");
 }
 else
 {
     echo "Successfully run the query $userQuery ".mysqli_error($conn);
-    header("location: iq.php");
+    header("location: pick.php");
 }
