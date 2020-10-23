@@ -24,7 +24,7 @@ $re2 = mysqli_query($conn,$Query);
                       <tr>
                           <th width="1000">Product name</th>
                           <th width="500">Description</th>
-                          <th width="246">Price</th>
+                          <th width="346">Price</th>
                           <th width="246">Quantity</th>
                           <th width="246">Net</th>
                           <th width="246">Delete</th>
