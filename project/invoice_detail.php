@@ -3,7 +3,10 @@ require "navbar.php";
 require_once "server.php";
 
 $invoice_id = $_GET['id'];
-$userQuery = "SELECT * FROM `invoice detail` p inner join product d ON p.product_id = d.product_id where invoice_id = '$invoice_id'";
+$userQuery = "SELECT * FROM invocie JOIN `sale order` USING (sale_id)
+                                    JOIN `sale detail` USING (sale_id)
+                                    JOIN product USING(product_id)
+                                    WHERE invoice_id = '$invoice_id'";
 $result = mysqli_query($conn,$userQuery);
 $Query = "SELECT SUM(product_net) AS Total FROM `sale detail` JOIN product USING(product_id)";
 $re2 = mysqli_query($conn,$Query);
