@@ -45,9 +45,9 @@ h2 {
 .sidebar h1 {
     display: block;
     padding: 10px 20px;
-    color: #fff;
+    color: #e4b660;
     text-decoration: none;
-    font-family: "Rubik";
+    font-family: Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 2px;
     font-weight: 400;
     margin: 0;
@@ -58,14 +58,14 @@ h2 {
 .sidebar a {
     display: block;
     padding: 10px 20px;
-    color: #bbb;
+    color: whitesmoke;
     text-decoration: none;
-    font-family: "Rubik";
+    font-family: Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 2px;
 }
 
 .sidebar a:hover {
-    color: #fff;
+    color: #f2ab39;
     background-color: #383a3a;
     transition: 0.4s;
 }
