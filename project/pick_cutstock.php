@@ -1,25 +1,41 @@
 <?php
 require("server.php");
+$c=0;
+$d=0;
+$i=0;
 $id = $_GET['id'];
 $userQuery = "SELECT * FROM picking JOIN `sale order` USING (sale_id)
                                     JOIN `sale detail` USING (sale_id)
                                     JOIN product USING(product_id)
                                     WHERE pick_id = '$id'";
 $result = mysqli_query($conn,$userQuery);
-$i=0;
+
+
+
 while ($row = mysqli_fetch_assoc($result)) { 
     $qty[$i] = $row['qty'];
     $sto[$i] = $row['storage_id'];
     $proid[$i] = $row['product_id'];
-    $i++;
+    $pick[$i] = $row['pick_id'];
+    $query = "INSERT INTO `cutstock`( `storage_id`,pick_id, `product_id`, `cut_qty`) VALUES ('$sto[$i]','$pick[$i]','$proid[$i]','$qty[$i]')";
+    $result3 = mysqli_query($conn,$query);
+    $Query = "SELECT * FROM cutstock JOIN `storage detail` USING (storage_id,`product_id`) WHERE product_id = $proid[$i]";
+    $res = mysqli_query($conn,$Query);
+    while ($row2 = mysqli_fetch_assoc($res)){
+        $stock = $row2['product_qty'];
+        $cut  = $row2['cut_qty'];
+        $pdid  = $row2['product_id'];
+        $stoid  = $row2['storage_id'];
+        $total  = $stock - $cut ;
+        $query2  = "UPDATE `storage detail` SET product_qty = $total WHERE product_id = '$pdid' AND storage_id = '$stoid'";
+        $result2 = mysqli_query($conn,$query2);
+        $d++;
+    }
+$i++;
 }
-$c=0;
-while($row2 = mysqli_fetch_assoc($result)){
-$Query[$c] = "UPDATE `storage detail` SET `product_qty` = '80' WHERE `storage detail`.`sto_detail_id` = 4;";
-$result[$c] = mysqli_query($conn,$Query[$c]);
-$c++;
-}
+header("location: pick.php")
 
-echo var_dump($qty);
-echo var_dump($proid);
-echo var_dump($sto);
+
+?>
+
+      
