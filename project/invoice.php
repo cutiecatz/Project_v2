@@ -3,7 +3,8 @@ require("server.php");
 require('navbar.php');
 $userQuery = "SELECT * FROM invoice
                       JOIN customer  USING (customer_id)
-                      JOIN company USING (company_id)";
+                      JOIN company USING (company_id)
+                      JOIN sale order USING (sale_id)";
 $result = mysqli_query($conn,$userQuery);
 
 ?>
@@ -14,14 +15,19 @@ $result = mysqli_query($conn,$userQuery);
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+<<<<<<< Updated upstream
       <h2><a href="invoice_create.php">Create INVOICE <span class="fas fa-file-medical"></a></h2>
+=======
+      <h2><a href="invoice_create.php"><button class="button button1">Create Invoice</button></a></h2>
+>>>>>>> Stashed changes
       <h1 class="phead">Invoice</h1>
       <div class="PO">
         <table style="width:90%">
           <tr>
               <th> Invoice Number</th>
-              <th> Customer </th>
-              <th> Company Code</th>
+              <th> Sale Order ID</th>
+              <th> Company Code</th> 
+              <th> Customer </th>                      
               <th> Purchase Order Date </th>
               <th> View</th>
               <th> Show Document</th>
@@ -31,8 +37,9 @@ $result = mysqli_query($conn,$userQuery);
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
           <tr>
               <?php echo "<td>INVOICE#".$row['invoice_id']."</td>" ?>
-              <?php echo "<td>".$row['customer_name']."</td>" ?>
+              <?php echo "<td>SO#".$row['sale_id']."</td>" ?>
               <?php echo "<td>".$row['company_code']."</td>" ?>
+              <?php echo "<td>".$row['customer_name']."</td>" ?>            
               <?php echo "<td>".$row['invoice_date']."</td>" ?>            
               <?php echo "<td><a href=\"invoice_detail.php?id=".$row['invoice_id']."\"> " ?> 
               <span class="fas fa-eye"></a></td>
