@@ -23,7 +23,7 @@ $c=1;
 <table>
 <tr>
     <td>Invoice ID</td>
-    <td><input type="text" name="invoice_id" placeholder="100"/></td>
+    <td><input type="text" name="invoice_id" placeholder=" "/></td>
 </tr>
 </tr>
 <td>SALE ORDER ID</td>
@@ -47,6 +47,14 @@ $c=1;
         <option value="<?php  echo $row['company_id'] ?>"> <?php echo $row['company_code'];?> </option>
      <?php } ?>
     </td>
+<tr>
+    <td>Sale Order ID</td>
+    <td><select name="sid" id="sid">
+    <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
+        <option value="<?php echo $row['sale_id']; ?>"> SO#<?php echo $row['sale_id'];?> </option>
+     <?php } ?>
+    </td>
+</tr>
 <tr>
     <td>Invoice Date </td>
     <td><input type="date" name="date"></td>
