@@ -19,15 +19,19 @@ $result = mysqli_query($conn,$userQuery);
         <table style="width:90%">
       <tr>
           <th> STORAGE NAME</th>
-          <th> Edit</th>
+          <th> ADD STOCK</th>
+          <th> INVENTORY</th>
           <th> Delete</th>
       </tr>
+      
       <div class="POdetail">
           <?php while ($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
             <?php echo "<td>".$row['storage_name']."</td>" ?>
+            <?php echo "<td><a href=\"storeproduct_add.php?id=".$row['storage_id']."\"> " ?> 
+            <span class="fas fa-plus"></a></td>
             <?php echo "<td><a href=\"storagedetail.php?id=".$row['storage_id']."\"> " ?> 
-            <span class="fas fa-edit"></a></td>
+            <span class="fas fa-eye"></a></td>
             <?php echo "<td><a href=\"plant_delete.php?id=".$row['storage_id']."\"> "?>
             <span class="fas fa-trash-alt"></a></td>
             <br>
