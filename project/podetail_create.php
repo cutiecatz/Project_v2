@@ -1,7 +1,5 @@
 <?php
-require "navbar.php";
 require_once "server.php";
-
 $po_id = $_GET['id'];
 $userQuery = "SELECT  FROM `po detail` where po_id = '$po_id'";
 $result = mysqli_query($conn,$userQuery);

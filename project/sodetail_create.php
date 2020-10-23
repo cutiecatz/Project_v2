@@ -1,7 +1,5 @@
 <?php
-require "navbar.php";
 require_once "server.php";
-
 $rfq_id = $_GET['id'];
 $userQuery = "SELECT * FROM `sale order` where sale_id = '$rfq_id'";
 $result = mysqli_query($conn,$userQuery);

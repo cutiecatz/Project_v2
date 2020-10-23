@@ -1,6 +1,5 @@
 <?php
 require("server.php");
-require("navbar.php");
 $userQuery = "SELECT * FROM `product`";
 $result = mysqli_query($conn,$userQuery);
 

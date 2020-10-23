@@ -1,6 +1,5 @@
 <?php
 require("server.php");
-require("navbar.php");
 $userQuery = "SELECT * FROM `company`";
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM `vendor`";

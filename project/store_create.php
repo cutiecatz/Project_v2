@@ -1,6 +1,5 @@
 <?php
 require("server.php");
-require("navbar.php");
 $userQuery = "SELECT * FROM `plant`";
 $result2 = mysqli_query($conn,$userQuery);
 ?>

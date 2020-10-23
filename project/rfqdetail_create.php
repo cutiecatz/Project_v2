@@ -1,7 +1,5 @@
 <?php
-require "navbar.php";
 require_once "server.php";
-
 $rfq_id = $_GET['id'];
 $userQuery = "SELECT * FROM `rfq detail` inner join product where rfq_id = '$rfq_id'";
 $result = mysqli_query($conn,$userQuery);

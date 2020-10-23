@@ -1,6 +1,5 @@
 <?php
 require("server.php");
-require("navbar.php");
 ?>
 
 <html>
