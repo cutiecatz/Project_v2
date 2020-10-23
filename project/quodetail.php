@@ -18,13 +18,8 @@ $re2 = mysqli_query($conn,$Query);
         </head>
                 <body>
                     <H1>Quotation Detail : <?php echo $quo_id ?></H1>
-                <table>
-                    <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
-                   <td><h3><a href="quo.php">Back To Quotation <span class="fas fa-arrow-left"></a></h3></td> 
-                   <?php echo "<td><h3><a href=\"quodetail_create.php?id=".$quo_id."\">Add Product " ?> 
-                   <span class="fas fa-plus"></a></h3></td>
-                    </table>
-                  <table width="416" border="0">
+
+                <table width="416" border="0">
                       <tr>
                           <td width="400">Product name</td>
                           <td width="246">Description</td>
@@ -44,11 +39,17 @@ $re2 = mysqli_query($conn,$Query);
                         <?php echo "<td>".$row['product_dis']."</td>" ?>
                         <?php echo "<td>".$row['product_net']."</td>" ?>
                         <?php echo "<td><a href=\"quodetail_delete.php?id=".$row['quo_detail_id']."\"> "?>
-            <span class="fas fa-trash-alt"></a></td>
+                        <span class="fas fa-trash-alt"></a></td>
                     
                  </tr>
                  <?php  } ?>
-             </table> 
-                 </form> 
+                </table> 
+                <table>
+                    <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
+                   <td><h3><a href="quo.php">Back To Quotation <span class="fas fa-arrow-left"></a></h3></td> 
+                   <?php echo "<td><h3><a href=\"quodetail_create.php?id=".$quo_id."\">Add Product " ?> 
+                   <span class="fas fa-plus"></a></h3></td>
+                </table>
+                </form> 
                 </body>
 

@@ -18,13 +18,7 @@ $re2 = mysqli_query($conn,$Query);
     </head>
                 <body>
                     <H1>Purchase Order No : PO# <?php echo $po_id?></H1>
-                    <table>
-                    <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
-                   <td><h3><a href="po.php">Back To Purchase Order <span class="fas fa-arrow-left"></a></h3></td> 
-                   <?php echo "<td><h3><a href=\"podetail_create.php?id=".$po_id."\">Add Product " ?> 
-                   <span class="fas fa-file-medical"></a></h3></td>
-                    </table>
-                    <br><br>
+
                 <div class="PO">
                   <table width="500" border="0">
                       <tr>
@@ -50,6 +44,13 @@ $re2 = mysqli_query($conn,$Query);
                  </tr>
                  <?php  } ?>
              </table> 
+                <br><br>
+            <table>
+                <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
+                <td><h3><a href="po.php">Back To Purchase Order <span class="fas fa-arrow-left"></a></h3></td> 
+                <?php echo "<td><h3><a href=\"podetail_create.php?id=".$po_id."\">Add Product " ?> 
+                <span class="fas fa-file-medical"></a></h3></td>
+            </table>
              </div>
              </div>
                  </form> 

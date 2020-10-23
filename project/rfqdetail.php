@@ -18,12 +18,6 @@ $re2 = mysqli_query($conn,$Query);
         </head>
                 <body>
                     <H1>RFQ Detail : <?php echo $rfq_id ?></H1>
-                <table>
-                    <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
-                   <td><h3><a href="rfq.php">Back To RFQ <span class="fas fa-arrow-left"></a></h3></td> 
-                   <?php echo "<td><h3><a href=\"rfqdetail_create.php?id=".$rfq_id."\">Add Product" ?> 
-                   <span class="fas fa-plus"></a></h3></td>
-                    </table>
                   <table width="416" border="0">
                       <tr>
                           <td width="400">Product name</td>
@@ -46,6 +40,12 @@ $re2 = mysqli_query($conn,$Query);
                     
                  </tr>
                  <?php  } ?>
-             </table> 
+             </table>
+            <table>
+                    <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
+                   <td><h3><a href="rfq.php">Back To RFQ <span class="fas fa-arrow-left"></a></h3></td> 
+                   <?php echo "<td><h3><a href=\"rfqdetail_create.php?id=".$rfq_id."\">Add Product" ?> 
+                   <span class="fas fa-plus"></a></h3></td>
+            </table>
                  </form> 
                 </body>

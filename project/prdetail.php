@@ -16,9 +16,7 @@ $result = mysqli_query($conn,$userQuery);
         </head>
                 <body>
                     <H1>Purchase Requisition No : <?php echo $pr_id?></H1>
-                    <h2><?php echo "<td><a href=\"prdetail_create.php?id=".$pr_id."\">Add Product" ?> 
-                    <span class="fas fa-plus"></a></td></h2>
-                  <table width="416" border="0">
+                    <table width="416" border="0">
                       <tr>
                           <td width="400">Product name</td>
                           <td width="246">Description</td>
@@ -37,7 +35,9 @@ $result = mysqli_query($conn,$userQuery);
                         
                     
                  </tr>
-                 <?php  } ?>
-             </table> 
+                    <?php  } ?>
+                    </table> 
+                    <h2><?php echo "<td><a href=\"prdetail_create.php?id=".$pr_id."\">Add Product" ?> 
+                    <span class="fas fa-plus"></a></td></h2>
                  </form> 
                 </body>

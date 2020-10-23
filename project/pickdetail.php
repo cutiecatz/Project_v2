@@ -19,10 +19,7 @@ $result = mysqli_query($conn,$userQuery);
         </head>
                 <body>
                 <H1>PICKING NO : #<?php echo $pick?></H1>
-                    <table>
-                   <td><h3><a href="pick.php">Back To PICKING <span class="fas fa-arrow-left"></a></h3></td> 
-                   <?php echo "<td><h3><a href=\"pick_cutstock.php?id=".$pick."\">POST</a></h3></td>" ?> 
-                  <table width="416" border="0">
+                <table width="416" border="0">
                       <tr>
                           <td width="400">Product name</td>
                           <td width="246">Description</td>
@@ -35,11 +32,12 @@ $result = mysqli_query($conn,$userQuery);
                         <?php echo "<td>".$row['product_name']."</td>" ?>
                         <?php echo "<td>".$row['product_descrip']."</td>" ?>
                         <?php echo "<td>".$row['qty']."</td>" ?>
-                        
-                        
-                    
                  </tr>
                  <?php  } ?>
-             </table> 
-                 </form> 
+                </table> 
+                <table>
+                   <td><h3><a href="pick.php">Back To PICKING <span class="fas fa-arrow-left"></a></h3></td> 
+                   <?php echo "<td><h3><a href=\"pick_cutstock.php?id=".$pick."\">POST</a></h3></td>" ?>
+                    </table> 
+                </form> 
                 </body>

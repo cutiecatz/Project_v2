@@ -16,11 +16,7 @@ $result = mysqli_query($conn,$userQuery);
         </head>
                 <body>
                 <H1>INQUIRY NO : #<?php echo $pr_id?></H1>
-                    <table>
-                   <td><h3><a href="iq.php">Back To INQUIRY <span class="fas fa-arrow-left"></a></h3></td> 
-                   <?php echo "<td><h3><a href=\"iqdetail_create.php?id=".$pr_id."\">Add Product " ?> 
-                   <span class="fas fa-plus"></a></h3></td>
-                  <table width="416" border="0">
+                <table width="416" border="0">
                       <tr>
                           <td width="400">Product name</td>
                           <td width="246">Description</td>
@@ -35,11 +31,16 @@ $result = mysqli_query($conn,$userQuery);
                         <?php echo "<td>".$row['product_descrip']."</td>" ?>
                         <?php echo "<td>".$row['product_qty']."</td>" ?>
                         <?php echo "<td><a href=\"iqdetail_delete.php?id=".$row['inquiry_detail_id']."\"> "?>
-            <span class="fas fa-trash-alt"></a></td>
+                        <span class="fas fa-trash-alt"></a></td>
                         
                     
                  </tr>
                  <?php  } ?>
-             </table> 
+                </table> 
+                <table>
+                    <td><h3><a href="iq.php">Back To INQUIRY <span class="fas fa-arrow-left"></a></h3></td> 
+                    <?php echo "<td><h3><a href=\"iqdetail_create.php?id=".$pr_id."\">Add Product " ?> 
+                    <span class="fas fa-plus"></a></h3></td>
+                </table>
                  </form> 
                 </body>
