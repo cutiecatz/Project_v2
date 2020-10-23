@@ -12,7 +12,7 @@
 require("navbar.php");
 ?>
     <div class="luxury">
-        <a href="https://uppic.cc/v/yN2q" title=""><img src="https://uppic.cc/d/yN2q" alt="" /></a>
+        <a href="https://uppic.cc/v/yN2q" title=""><img src="https://uppic.cc/d/yN2q" alt="" style="width: 40cm;"/></a>
         <div class="text-block">
             <h2>A noble material with an intrinsic expression of a unique handcraft leather product.</h2>
             <p>From an infinite passion for what is beautiful and really painstaking, a company comes that sets itself the objective of conveying emotions within each one of its creations</p>
