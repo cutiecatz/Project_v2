@@ -1,5 +1,6 @@
 <?php
 require("server.php");
+require("navbar.php");
 $userQuery = "SELECT * FROM `sale order`";
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM `storage`";
@@ -7,7 +8,10 @@ $result2 = mysqli_query($conn,$userQuery2);
 ?>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="msd.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <h2> PICKING</h2>

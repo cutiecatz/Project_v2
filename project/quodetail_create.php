@@ -11,7 +11,10 @@ $i=1;
 ?>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <h2>Add Quotation:<?php echo $rfq_id ?></h2>
