@@ -1,0 +1,57 @@
+<?php
+require "navbar.php";
+require_once "server.php";
+
+$invoice_id = $_GET['id'];
+$userQuery = "SELECT * FROM `invoice detail` p inner join product d ON p.product_id = d.product_id where invoice_id = '$invoice_id'";
+$result = mysqli_query($conn,$userQuery);
+$Query = "SELECT SUM(product_net) AS Total FROM `sale detail` JOIN product USING(product_id)";
+$re2 = mysqli_query($conn,$Query);
+?>
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+                <body>
+                    <H1>Invoice No : Invoice# <?php echo $invoice_id?></H1>
+
+                <div class="Invoice">
+                  <table width="500" border="0">
+                      <tr>
+                          <th width="1000">Product name</th>
+                          <th width="500">Description</th>
+                          <th width="346">Price</th>
+                          <th width="246">Quantity</th>
+                          <th width="246">Net</th>
+                          <th width="246">Delete</th>
+                      </tr>
+                      <div class="invoice_detail">
+                      <?php while ($row = mysqli_fetch_assoc($result)) { ?>     
+                 <tr>
+                 
+                        <?php echo "<td>".$row['product_name']."</td>" ?>
+                        <?php echo "<td>".$row['product_descrip']."</td>" ?>
+                        <?php echo "<td>".$row['product_price']."</td>" ?>
+                        <?php echo "<td>".$row['qty']."</td>" ?>
+                        <?php echo "<td>".$row['product_net']."</td>" ?>
+                        <?php echo "<td><a href=\"invoice_detail_delete.php?id=".$row['invoice_detail_id']."\"> "?>
+            <span class="fas fa-trash-alt"></a></td>
+                    
+                 </tr>
+                 <?php  } ?>
+             </table> 
+                <br><br>
+            <table>
+                <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
+                <td><h3><a href="invoice.php">Back To Purchase Order <span class="fas fa-arrow-left"></a></h3></td> 
+                <?php echo "<td><h3><a href=\"invoice_detail_create.php?id=".$invoice_id."\">Add Product " ?> 
+                <span class="fas fa-file-medical"></a></h3></td>
+            </table>
+             </div>
+             </div>
+                 </form> 
+                </body>

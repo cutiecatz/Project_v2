@@ -4,6 +4,7 @@ $id = $_POST['invoice_id'];
 $cus = $_POST['cus'];
 $com = $_POST['com'];
 $d = $_POST['date'];
+$id = $id+5000;
 
 $userQuery = "INSERT into `invoice` values('$id',$cus,$com,'$d',0,0,0)";
 $result = mysqli_query($conn,$userQuery);
