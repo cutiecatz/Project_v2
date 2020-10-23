@@ -6,7 +6,7 @@ $c = $_POST['c'];
 $d = $_POST['date'];
 
 $id2 = $id+1000;
-$userQuery = "INSERT into `purchase order` values('$id2',$v,$c,'$d',0)";
+$userQuery = "INSERT into `purchase order` values('$id2',$v,$c,'$d',0,0,0)";
 $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {
