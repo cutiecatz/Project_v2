@@ -28,20 +28,6 @@ $result3 = mysqli_query($conn,$userQuery2);
                    </tr>
                 </table>
                 <br><br>
-                <table>
-                    <tr>
-                    <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)){ echo $row['Total'] ?></H3></td>
-                        <td><h3>Total Discount: <?php echo "".$row['Dis']."" ?></h3></td>
-                    <?php }?>
-                    <td><H3>Sale Person: <?php while ($row = mysqli_fetch_assoc($result3)){ echo $row['employee_name'] ?></H3></td>
-                        <td><h3>Job: <?php echo "".$row['employee_position']."" ?></h3></td>
-                        <td><h3>Shipping Method: <?php echo "".$row['ship_method']."" ?></h3></td>
-                        <td><h3>Delivery Date: <?php echo "".$row['delivery_date']."" ?></h3></td>
-                        <td><h3>Due Date: <?php echo "".$row['sale_due_date']."" ?></h3></td>
-                    <?php }?>
-                    </tr>
-                    
-                    </table><br><br>
                   <table width="416" border="0">
                       <tr>
                           <td width="400">Product name</td>
@@ -66,5 +52,20 @@ $result3 = mysqli_query($conn,$userQuery2);
                  </tr>
                  <?php  } ?>
              </table> 
+                    <br><br>
+                    <table>
+                    <tr>
+                    <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)){ echo $row['Total'] ?></H3></td>
+                        <td><h3>Total Discount: <?php echo "".$row['Dis']."" ?></h3></td>
+                    <?php }?>
+                    <td><H3>Sale Person: <?php while ($row = mysqli_fetch_assoc($result3)){ echo $row['employee_name'] ?></H3></td>
+                        <td><h3>Job: <?php echo "".$row['employee_position']."" ?></h3></td>
+                        <td><h3>Shipping Method: <?php echo "".$row['ship_method']."" ?></h3></td>
+                        <td><h3>Delivery Date: <?php echo "".$row['delivery_date']."" ?></h3></td>
+                        <td><h3>Due Date: <?php echo "".$row['sale_due_date']."" ?></h3></td>
+                    <?php }?>
+                    </tr>
+                    
+                    </table>
                  </form> 
                 </body>
