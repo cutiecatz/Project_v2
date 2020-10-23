@@ -12,7 +12,7 @@ $result2 = mysqli_query($conn,$userQuery);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<h2>Add Purchase Order</h2>
+<h2>Add Plant</h2>
 <form action="plant_add.php" method="POST" style="border:1px solid gray;">
 
         <table >
