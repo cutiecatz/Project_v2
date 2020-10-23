@@ -1,20 +1,19 @@
 <?php
 require_once "server.php";
-$id = $_POST['po_id'];
-$v = $_POST['v'];
-$c = $_POST['c'];
+$id = $_POST['invoice_id'];
+$cus = $_POST['cus'];
+$com = $_POST['com'];
 $d = $_POST['date'];
-
-$id2 = $id+1000;
-$userQuery = "INSERT into `purchase order` values('$id2',$v,$c,'$d',0,0,0)";
+$id2 = 500000+$id;
+$userQuery = "INSERT into `invoice` values('$id',$cus,$com,'$d',0,0,0)";
 $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {
     die ("Could not successfully run the query $userQuery ".mysqli_error($conn));
-    header("location: po.php");
+    header("location: invoice.php");
 }
 else
 {
     echo "Successfully run the query $userQuery ".mysqli_error($conn);
-    header("location: po.php");
+    header("location: invoice.php");
 }
