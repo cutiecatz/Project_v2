@@ -10,6 +10,6 @@ if(!$result)
 else
 {
     echo "successfully deleted the News<br></br>";
-    header("location: sodetail.php");
+    header("location: so.php");
 }
 ?>

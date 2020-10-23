@@ -5,6 +5,10 @@ $userQuery = "SELECT * FROM `customer`";
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM `employee`";
 $result2 = mysqli_query($conn,$userQuery2);
+$userQuery3 = "SELECT * FROM `inquiry`";
+$result3 = mysqli_query($conn,$userQuery3);
+$userQuery4 = "SELECT * FROM `quotation`";
+$result4 = mysqli_query($conn,$userQuery4);
 ?>
 <html>
 <head>
@@ -18,8 +22,24 @@ $result2 = mysqli_query($conn,$userQuery2);
 <form action="so_add.php" method="POST" style="border:1px solid gray;">
 <table>
 <tr>
-    <td>INQUIRY ID</td>
+    <td>SALE ID</td>
     <td><input type="text" name="id"/></td>
+</tr>
+<tr>
+    <td>INQUIRY ID</td>
+    <td><select name="in" id="in">
+    <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
+        <option value="<?php echo $row['inquiry_id']; ?>"> <?php echo $row['inquiry_id'];?> </option>
+     <?php } ?>
+    </td>
+</tr>
+<tr>
+    <td>QUOTATION ID</td>
+    <td><select name="quo" id="quo">
+    <?php while ($row = mysqli_fetch_assoc($result4)) { ?>
+        <option value="<?php echo $row['quo_id']; ?>"> <?php echo $row['quo_id'];?> </option>
+     <?php } ?>
+    </td>
 </tr>
 <tr>
     <td>Customer Name</td>
