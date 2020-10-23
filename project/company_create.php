@@ -5,7 +5,7 @@ require("server.php");
 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="http://localhost/tryyy/css/ily.css">
+<link rel="stylesheet" type="text/css" href="http://localhost/project_v2/project/css/style_v2.css">
 </head>
 
 <h1 class="head">Add Customer</h1>
