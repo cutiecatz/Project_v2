@@ -13,7 +13,7 @@ $result = mysqli_query($conn,$userQuery);
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-      <h2><a href="vendor_create.php">Add Vendor <span class="fas fa-user-plus"></a></h2>
+      <h2><a href="vendor_create.php"><button class="button button1">Add Vender</button></a></h2>
       <h1 class="phead">Vendor</h1>
       <div class="PO">
         <table style="width:90%">

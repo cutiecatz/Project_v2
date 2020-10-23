@@ -12,7 +12,7 @@ $result = mysqli_query($conn,$userQuery);
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-      <h2><a href="iq_create.php">Create INQUIRY <span class="fas fa-file-medical"></a></h2>
+      <h2><a href="iq_create.php"><button class="button button1">Create INQUIRY</button></a></h2>
       <h1 class="phead">INQUIRY</h1>
       <div class="PO">
         <table style="width:90%">
