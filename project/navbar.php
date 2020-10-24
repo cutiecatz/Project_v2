@@ -32,7 +32,7 @@
                   <li><a href="pick.php">Picking</a></li>
                   <li><a href="gr.php">Good Recipe</a></li>
                   <li><a href="invoice.php">Invoice</a></li>
-
+                  <li><a href="sum.php">SUMMARY</a></li>
                   
                 </ul>
             </div>

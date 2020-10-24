@@ -3,12 +3,12 @@ require "navbar.php";
 require_once "server.php";
 
 $invoice_id = $_GET['id'];
-$userQuery = "SELECT * FROM invocie JOIN `sale order` USING (sale_id)
+$userQuery = "SELECT * FROM invoice JOIN `sale order` USING (sale_id)
                                     JOIN `sale detail` USING (sale_id)
                                     JOIN product USING(product_id)
                                     WHERE invoice_id = '$invoice_id'";
 $result = mysqli_query($conn,$userQuery);
-$Query = "SELECT SUM(product_net) AS Total FROM `sale detail` JOIN product USING(product_id)";
+$Query = "SELECT SUM(net) AS Total FROM `sale detail` JOIN product USING(product_id)";
 $re2 = mysqli_query($conn,$Query);
 ?>
 <!DOCTYPE html>
@@ -29,8 +29,9 @@ $re2 = mysqli_query($conn,$Query);
                           <th width="500">Description</th>
                           <th width="346">Price</th>
                           <th width="246">Quantity</th>
+                          <th> Discount</th>
                           <th width="246">Net</th>
-                          <th width="246">Delete</th>
+                          
                       </tr>
                       <div class="invoice_detail">
                       <?php while ($row = mysqli_fetch_assoc($result)) { ?>     
@@ -38,11 +39,11 @@ $re2 = mysqli_query($conn,$Query);
                  
                         <?php echo "<td>".$row['product_name']."</td>" ?>
                         <?php echo "<td>".$row['product_descrip']."</td>" ?>
-                        <?php echo "<td>".$row['product_price']."</td>" ?>
+                        <?php echo "<td>".$row['price']."</td>" ?>
                         <?php echo "<td>".$row['qty']."</td>" ?>
-                        <?php echo "<td>".$row['product_net']."</td>" ?>
-                        <?php echo "<td><a href=\"invoice_detail_delete.php?id=".$row['invoice_detail_id']."\"> "?>
-            <span class="fas fa-trash-alt"></a></td>
+                        <?php echo "<td>".$row['discount']."</td>" ?>
+                        <?php echo "<td>".$row['net']."</td>" ?>
+                        
                     
                  </tr>
                  <?php  } ?>
@@ -50,9 +51,8 @@ $re2 = mysqli_query($conn,$Query);
                 <br><br>
             <table>
                 <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
-                <td><h3><a href="invoice.php">Back To Purchase Order <span class="fas fa-arrow-left"></a></h3></td> 
-                <?php echo "<td><h3><a href=\"invoice_detail_create.php?id=".$invoice_id."\">Add Product " ?> 
-                <span class="fas fa-file-medical"></a></h3></td>
+                <td><h3><a href="invoice.php">Back To Invoice <span class="fas fa-arrow-left"></a></h3></td> 
+                
             </table>
              </div>
              </div>
