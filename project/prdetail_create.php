@@ -3,7 +3,7 @@ require "navbar.php";
 require_once "server.php";
 
 $pr_id = $_GET['id'];
-$userQuery = "SELECT * FROM `pr detail` inner join product where pr_id = '$pr_id'";
+$userQuery = "SELECT * FROM `purchase requisition` where pr_id = '$pr_id'";
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM product ";
 $result2 = mysqli_query($conn,$userQuery2);
@@ -24,7 +24,7 @@ $i=1;
     <td>Purchase Order ID</td>
     <td><select name="pr" id="pr">
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-        <option value="<?php echo "$pr_id"; ?>"> <?php echo $row['pr_id'];?> </option>
+        <option value="<?php echo $row['pr_id']; ?>"> <?php echo $row['pr_id'];?> </option>
      <?php  } ?>
     </td>
 </tr>

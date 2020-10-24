@@ -1,6 +1,5 @@
 <?php
 require("server.php");
-require("navbar.php");
 $userQuery = "SELECT * FROM `customer`";
 $result = mysqli_query($conn,$userQuery);
 
@@ -8,39 +7,32 @@ $result = mysqli_query($conn,$userQuery);
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/project_v2/project/css/style_v2.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<h2> INQUIRY</h2>
-<form action="iq_add.php" method="POST" style="border:1px solid gray;">
-<table>
-<tr>
-    <td>INQUIRY ID</td>
-    <td><input type="text" name="id"/></td>
-</tr>
-<tr>
-    <td>Customer Name</td>
-    <td><select name="cn" id="cn">
+<h1 class="head"> INQUIRY</h2>
+<div class="container">
+  <form action="iq_add.php">
+
+    <label for="id">INQUIRY ID</label>
+    <input type="text" name="id" placeholder="your id...">
+
+    <label for="cname">Customer Name</label>
+    <select name="cn" id="cn">
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <option value="<?php echo $row['customer_id']; ?>"> <?php echo $row['customer_name'];?> </option>
-     <?php } ?>
-    </td>
-</tr>
-<tr>
-    <td>Date </td>
-    <td><input type="date" name="date"></td>
-</tr>
-<tr>
-    <td>Due-Date </td>
-    <td><input type="date" name="due_date"></td>
-</tr>
-
-<tr>
+     <?php } ?> </select>
+   
+    <label for="date">Date </label><br><br>
+    <input type="date" name="date">
+    <br><br>
+    <label for="dd">Due-Date </label><br><br>
+    <input type="date" name="due_date">
+    <br><br>
     <td><input type="submit" value="submit"/></td>
     <td><input type="reset" value="reset"/></td>
-</tr>
-</table>
+
 </form>
 </html>

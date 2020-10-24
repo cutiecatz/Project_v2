@@ -1,6 +1,5 @@
 <?php
 require("server.php");
-require("navbar.php");
 $userQuery = "SELECT * FROM `customer`";
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM `employee`";
@@ -13,75 +12,60 @@ $result4 = mysqli_query($conn,$userQuery4);
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/project_v2/project/css/style_v2.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<h2> SALE ORDER</h2>
-<form action="so_add.php" method="POST" style="border:1px solid gray;">
-<table>
-<tr>
-    <td>SALE ID</td>
-    <td><input type="text" name="id"/></td>
-</tr>
-<tr>
-    <td>INQUIRY ID</td>
-    <td><select name="in" id="in">
+<h1 class="head"> SALE ORDER</h1>
+<div class="container">
+  <form action="so_add.php">
+
+    <label for="id">SALE ID</label>
+    <input type="text" name="id" placeholder="your id...">
+    
+    <label for="id">INQUIRY ID</label>
+    <select name="in" id="in">
     <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
         <option value="<?php echo $row['inquiry_id']; ?>"> <?php echo $row['inquiry_id'];?> </option>
-     <?php } ?>
-    </td>
-</tr>
-<tr>
-    <td>QUOTATION ID</td>
-    <td><select name="quo" id="quo">
+     <?php } ?> </select>
+     
+    <label for="id">QUOTATION ID</label>
+    <select name="quo" id="quo">
     <?php while ($row = mysqli_fetch_assoc($result4)) { ?>
         <option value="<?php echo $row['quo_id']; ?>"> <?php echo $row['quo_id'];?> </option>
-     <?php } ?>
-    </td>
-</tr>
-<tr>
-    <td>Customer Name</td>
-    <td><select name="cn" id="cn">
+     <?php } ?> </select>
+    
+    <label for="cname">Customer Name</label>
+    <select name="cn" id="cn">
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <option value="<?php echo $row['customer_id']; ?>"> <?php echo $row['customer_name'];?> </option>
-     <?php } ?>
-    </td>
-</tr>
-<tr>
-    <td>Employee</td>
-    <td><select name="em" id="em">
+     <?php } ?> </select>
+    
+    <label for="em">Employee</label>
+    <select name="em" id="em">
     <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
         <option value="<?php echo $row['employee_id']; ?>"> <?php echo $row['employee_name'];?> </option>
-     <?php } ?>
-    </td>
-</tr>
-<tr>
-    <td>Date </td>
-    <td>CURRENT DATE</td>
-</tr>
-<tr>
-    <td>Due-Date </td>
-    <td><input type="date" name="due_date"></td>
-</tr>
-<tr>
-    <td>Delivery Date </td>
-    <td><input type="date" name="dev_date"></td>
-</tr>
-<tr>
-    <td>Ship-Method </td>
+     <?php } ?> </select>
+    
+    <label for="date">Date</td> <br><br>
+    <th>CURRENT DATE</th>
+    <br><br>
+    <label for="dd">Due-Date </label><br><br>
+    <input type="date" name="due_date">
+    <br><br>
+    <label for="dev">Delivery Date </label><br><br>
+    <input type="date" name="dev_date">
+    <br><br>
+    <label for="ship">Ship-Method </label>
     <td><select name="ship" id="ship">
         <option value="Air">Air</option>
         <option value="Ground">Ground</option>
         <option value="Sea">Sea</option>
     </select></td>
-</tr>
 
-<tr>
     <td><input type="submit" value="submit"/></td>
     <td><input type="reset" value="reset"/></td>
-</tr>
-</table>
+
 </form>
 </html>

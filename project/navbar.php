@@ -13,7 +13,7 @@
 <body>
           <nav>
             <div class = "sidebar">
-                <h1>Deluxe</h1>
+                <h1 style="font-size: 2.5em;">Deluxe</h1>
                 <ul class="opt">
                   <li><a href="homepage.php">Home</a></li>
                   <li><a href="company.php">Company</a></li>

@@ -1,6 +1,5 @@
 <?php
 require("server.php");
-require("navbar.php");
 $userQuery = "SELECT * FROM customer ";
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM company";
@@ -13,46 +12,39 @@ $c=1;
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/project_v2/project/css/style_v2.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<h2>Add Invoice</h2>
-<form action="invoice_add.php" method="POST" style="border:1px solid gray;">
-<table>
-<tr>
-    <td>Invoice ID</td>
-    <td><input type="text" name="invoice_id" placeholder=" "/></td>
-</tr>
-</tr>
-<td>SALE ORDER ID</td>
-    <td><select name="sale" id="sale">
+<h1 class="head">Add Invoice</h1>
+<div class="container">
+  <form action="invoice_add.php">
+
+    <label for="id">Invoice ID</label>
+    <input type="text" name="invoice_id" placeholder="your id...">
+
+    <label for="id">SALE ORDER ID</label>
+    <select name="sale" id="sale">
     <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
         <option value="<?php  echo $row['sale_id'] ?>"> SO#<?php echo $row['sale_id'];?> </option>
-     <?php } ?>
-    </td>
-<tr>
-<tr>
-    <td>Customer</td>
-    <td><select name="cus" id="cus">
+     <?php } ?> </select>
+   
+    <label for="cus">Customer</label>
+    <select name="cus" id="cus">
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <option value="<?php echo $row['customer_id'] ?>"> <?php echo $row['customer_name']; ?> </option>
-     <?php  } ?>
-    </td>
-</tr>
-<td>Company Code</td>
-    <td><select name="com" id="com">
+     <?php  } ?> </select>
+    
+    <label for="ccode">Company Code</label>
+    <select name="com" id="com">
     <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
         <option value="<?php  echo $row['company_id'] ?>"> <?php echo $row['company_code'];?> </option>
-     <?php } ?>
-    </td>
-<tr>
-    <td>Invoice Date </td>
-    <td><input type="date" name="date"></td>
-</tr>
-
-<tr>
+     <?php } ?> </select>
+    
+    <label for="date">Invoice Date </label><br><br>
+    <input type="date" name="date">
+    <br><br>
     <td><input type="submit" value="submit"/></td>
     <td><input type="reset" value="reset"/></td>
 </tr>
