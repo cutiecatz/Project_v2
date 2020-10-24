@@ -3,8 +3,9 @@ require_once "server.php";
 $id = $_POST['id'];
 $fq = $_POST['name'];
 $d = $_POST['des'];
+$w = $_POST['weight'];
 
-$userQuery = "INSERT into product values('$id','$fq','$d')";
+$userQuery = "INSERT into product values('$id','$fq','$w','$d')";
 $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {

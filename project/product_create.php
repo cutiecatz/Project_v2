@@ -21,6 +21,9 @@ $result = mysqli_query($conn,$userQuery);
 
     <label for="pname">Product Name</label>
     <input type="text" name="name" placeholder="your product name...">
+
+    <label for="pname">Weight</label>
+    <input type="text" name="weight" placeholder="your weight...">
     
     <label for="pname">Description</label>
     <textarea id="des" name="des" placeholder="your description..." style="height:100px"></textarea>

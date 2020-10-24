@@ -4,10 +4,11 @@ require_once "server.php";
 $cus_id = $_GET['id'];
 $n =$_POST['name'];
 $d = $_POST['desc'];
-
+$w = $_POST['weight'];
 
 
 $userQuery = "UPDATE product SET product_name = '$n',
+                                product_weight = '$w',
                                     product_descrip = '$d'
                              WHERE product_id = $cus_id";
                                  
