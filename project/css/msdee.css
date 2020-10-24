@@ -33,7 +33,7 @@ nav {
     width: 250px;
     height: 300px;
     /* only for demonstration, should be removed */
-    background: ;
+    background: #ccc;
     padding: 20px;
 }
 
@@ -44,31 +44,31 @@ nav ul {
     list-style-type: none;
     padding: 0;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     border: 1px solid #ddd;
     margin-left: 8.5cm;
-  }
-  
-  th, td {
+}
+
+th,
+td {
     text-align: left;
     padding: 16px;
-  }
-  
-  tr:nth-child(even) {
+}
+
+tr:nth-child(even) {
     background-color: whitesmoke;
-  }
+}
 
-
-.phead
-{
- font-family: Georgia, 'Times New Roman', Times, serif ;
- color: goldenrod;
- text-align: center;
- font-size: 3em;
- margin-left: 15cm;
+.phead {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: goldenrod;
+    text-align: center;
+    font-size: 3em;
+    margin-left: 15cm;
 }
 
 .button {
@@ -82,10 +82,11 @@ table {
     font-size: 18px;
     margin: 10px 20px;
     cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
     transition-duration: 0.4s;
 }
 
 .button1 {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
