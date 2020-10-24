@@ -36,20 +36,16 @@ $result4 = mysqli_query($conn,$userQuery4);
      <?php } ?> </select>
 
     <label for="id">DELIVERY</label>
-    <?php while ($row = mysqli_fetch_assoc($result4)) { ?>
-        <?php if ($row['ship_method'] == 'Air') ?>
-    <td><select name="type" id="type">
+
+        <td><select name="type" id="type">
         <option value="TONG SUEN">TONG SUEN</option>
         <option value="FastShip.co">FastShip.co</option>
         <option value="D-ONE Logistics">D-ONE Logistics</option>
-    </select></td>
-        <?php if ($row['ship_method'] == 'Sea') ?>
-    <td><select name="type" id="type">
         <option value="APM">APM</option>
         <option value="MSC">MSC</option>
         <option value="COSCO">COSCO</option>
     </select></td>
-    <?php } ?>
+   
 
     <label for="gd">GOODS RECEIPT DATE </label><br><br>
     <input type="date" name="gr_date">
