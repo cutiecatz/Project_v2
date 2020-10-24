@@ -11,7 +11,7 @@ $c=1;
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="http://localhost/project_v2/project/css/style_v2.css">
+    <link rel="stylesheet" type="text/css" href="../project/css/style_v2.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
