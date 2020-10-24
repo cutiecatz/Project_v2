@@ -3,7 +3,7 @@ require "navbar.php";
 require_once "server.php";
 
 $gr = $_GET['id'];
-$userQuery = "SELECT * FROM goods receipt JOIN `purchase order` USING (po_id)
+$userQuery = "SELECT * FROM `goods receipt` JOIN `purchase order` USING (po_id)
                                     JOIN `po detail` USING (po_id)
                                     JOIN product USING (product_id)
                                     WHERE gr_id = '$gr'";
@@ -18,7 +18,7 @@ $result = mysqli_query($conn,$userQuery);
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
         </head>
                 <body>
-                <H1>GOODS RECEIPT NO : #<?php echo $pick?></H1>
+                <H1>GOODS RECEIPT NO : #<?php echo $gr?></H1>
                 <table width="416" border="0">
                       <tr>
                           <td width="400">Product name</td>
