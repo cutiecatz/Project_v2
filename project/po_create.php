@@ -17,7 +17,7 @@ $c=1;
 
 <h1 class="head">Add Purchase Order</h1>
 <div class="container">
-  <form action="po_add.php">
+  <form action="po_add.php" method="POST">
 
     <label for="id">Purchase Order ID</label>
     <input type="text" name="po_id" placeholder="your id...">
