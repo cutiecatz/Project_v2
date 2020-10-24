@@ -36,7 +36,7 @@ require("server.php");
     <input type="text" name="company_phone" placeholder="your company telephone...">
 
     <label for="mail">E-mail </label>
-    <input type="text" name="email" placeholder="your company email...">
+    <input type="text" name="company_email" placeholder="your company email...">
 
 
 
