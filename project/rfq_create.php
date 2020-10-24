@@ -18,7 +18,7 @@ $c=1;
 
 <h1 class="head">Add Request for Quotation</h1>
 <div class="container">
-<form action="rfq_add.php">
+<form action="rfq_add.php" method="POST">
 
     <label for="id">Request For Quotation ID</label>
     <input type="text" name="rfq_id" placeholder="your id...">

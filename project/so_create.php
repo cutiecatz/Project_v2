@@ -19,7 +19,7 @@ $result4 = mysqli_query($conn,$userQuery4);
 
 <h1 class="head"> SALE ORDER</h1>
 <div class="container">
-  <form action="so_add.php">
+  <form action="so_add.php" method="POST">
 
     <label for="id">SALE ID</label>
     <input type="text" name="id" placeholder="your id...">

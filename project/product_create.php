@@ -14,13 +14,16 @@ $result = mysqli_query($conn,$userQuery);
 
 <h1 class="head">Add Product</h1>
 <div class="container">
-  <form action="product_add.php">
+  <form action="product_add.php" method="POST">
 
     <label for="id">Product ID</label>
     <input type="text" name="id" placeholder="your product id...">
 
     <label for="pname">Product Name</label>
     <input type="text" name="name" placeholder="your product name...">
+
+    <label for="pname">Weight</label>
+    <input type="text" name="weight" placeholder="your weight...">
     
     <label for="pname">Description</label>
     <textarea id="des" name="des" placeholder="your description..." style="height:100px"></textarea>

@@ -4,11 +4,12 @@ $id = $_POST['company_id'];
 $n = $_POST['company_name'];
 $c = $_POST['company_code'];
 $a = $_POST['company_add'];
-$m = $_POST['company_mail'];
+$m = $_POST['email'];
 $t = $_POST['company_phone'];
 $p = $_POST['company_post'];
+$coun = $_POST['company_country'];
 $city = $_POST['company_city'];
-$userQuery = "INSERT into company values($id,'$c','$n','$a','$city',$p,'$m',$t)";
+$userQuery = "INSERT into company values($id,'$c','$n','$a','$city',$p,'$coun','$m',$t)";
 $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {

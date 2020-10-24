@@ -12,7 +12,7 @@ require("server.php");
 
 <h1 class="head">Add Customer</h1>
 <div class="container">
-  <form action="company_add.php">
+  <form action="company_add.php" method="POST">
 
     <label for="id">ID</label>
     <input type="text" name="company_id" placeholder="your id...">
@@ -28,6 +28,9 @@ require("server.php");
 
     <label for="city">City</label>
     <input type="text" name="company_city" placeholder="your company city...">
+
+    <label for="coun">Country</label>
+    <input type="text" name="company_country" placeholder="your company country...">
 
     <label for="pcode">Post Code</label>
     <input type="text" name="company_post" placeholder="your company post code...">

@@ -19,7 +19,7 @@ $c=1;
 
 <h1 class="head">Add Invoice</h1>
 <div class="container">
-  <form action="invoice_add.php">
+  <form action="invoice_add.php" method="POST">
 
     <label for="id">Invoice ID</label>
     <input type="text" name="invoice_id" placeholder="your id...">

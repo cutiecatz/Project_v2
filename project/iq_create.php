@@ -14,7 +14,7 @@ $result = mysqli_query($conn,$userQuery);
 
 <h1 class="head"> INQUIRY</h2>
 <div class="container">
-  <form action="iq_add.php">
+  <form action="iq_add.php" method="POST">
 
     <label for="id">INQUIRY ID</label>
     <input type="text" name="id" placeholder="your id...">

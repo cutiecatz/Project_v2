@@ -7,7 +7,7 @@ $userQuery = "SELECT * FROM `sale detail` r join product d USING (product_id) wh
 $result = mysqli_query($conn,$userQuery);
 $Query = "SELECT SUM(net) AS Total, SUM(discount) AS Dis FROM `sale detail` WHERE sale_id = '$rfq_id'";
 $re2 = mysqli_query($conn,$Query);
-$userQuery2 = "SELECT * FROM `sale order` join employee USING (employee_id) join `customer` USING (customer_id) ";
+$userQuery2 = "SELECT * FROM `sale order` join employee USING (employee_id) join `customer` USING (customer_id) WHERE sale_id = '$rfq_id' ";
 $result3 = mysqli_query($conn,$userQuery2);
 ?>
         <!DOCTYPE html>

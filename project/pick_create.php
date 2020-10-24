@@ -15,7 +15,7 @@ $result2 = mysqli_query($conn,$userQuery2);
 
 <h1 class="head">PICKING DOCUMENT</h1>
 <div class="container">
-  <form action="pick_add.php">
+  <form action="pick_add.php" method="POST">
 
     <label for="id">PICKING ID</label>
     <input type="text" name="pick_id" placeholder="your id...">

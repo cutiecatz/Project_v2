@@ -21,6 +21,7 @@ $result = mysqli_query($conn,$userQuery);
           <th> Product ID</th>
           <th> Product Name</th>
           <th> Product Description</th>
+          <th> Weight</th>
           <th> Edit </th>
           <th> Delete </th> 
       </tr>
@@ -30,6 +31,7 @@ $result = mysqli_query($conn,$userQuery);
             <?php echo "<td>".$row['product_id']."</td>" ?>
             <?php echo "<td>".$row['product_name']."</td>" ?>
             <?php echo "<td>".$row['product_descrip']."</td>" ?>
+            <?php echo "<td>".$row['product_weight']."Kg.</td>" ?>
             <?php echo "<td><a href=\"product_update.php?id=".$row['product_id']."\"> " ?> 
             <span class="fas fa-edit"></a></td>
             <?php echo "<td><a href=\"product_delete.php?id=".$row['product_id']."\"> "?>

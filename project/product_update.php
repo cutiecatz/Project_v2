@@ -35,6 +35,11 @@ else
                           <td>Description</td>
                           <td><textarea rows="5" cols="100" type="text" name="desc"><?php echo $row['product_descrip'];?></textarea></td>
                       </tr>
+                      <tr>
+                          <td>Weight</td>
+                          <td><textarea rows="5" cols="100" type="text" name="weight"><?php echo $row['product_weight'];?></textarea></td>
+
+                      </tr>
                  
                       <tr>
                           <td ><input type="submit" name="button" value="Submit"></td>
