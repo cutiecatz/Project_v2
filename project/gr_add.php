@@ -1,14 +1,12 @@
 <?php
 require_once "server.php";
-$id = $_POST['id'];
-$sid = $_POST['sid'];
+$id = $_POST['gr_id'];
 $in = $_POST['in'];
 $po = $_POST['po'];
-$store = $_POST['st'];
 $gd = $_POST['gr_date'];
-$com = $_POST['com'];
+
 $id = $id+400000;
-$userQuery = "INSERT into `goods receipt` values('$id','$in','$store','$com','$po','$gd')";
+$userQuery = "INSERT INTO `goods receipt`(`gr_id`, `invoice_id`, `po_id`, `gr_date`) values('$id','$in','$po','$gd')";
 $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {

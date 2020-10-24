@@ -1,9 +1,7 @@
 <?php
 require("server.php");
 require("navbar.php");
-$userQuery = "SELECT * FROM 'goods receipt'                                    join storage USING (storage_id)
-                                            join 'purchase order' USING (po_id)
-                                            join 'invoice' USING (invoice_id)";
+$userQuery = "SELECT * FROM `goods receipt`";
 $result = mysqli_query($conn,$userQuery);
 
 ?>

@@ -52,6 +52,7 @@ $re2 = mysqli_query($conn,$Query);
             <table>
                 <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
                 <td><h3><a href="invoice.php">Back To Invoice <span class="fas fa-arrow-left"></a></h3></td> 
+                <?php echo "<td><h3><a href=\"invoice_detail_add.php?id=".$invoice_id."\">POST</a></h3></td>" ?>
                 
             </table>
              </div>

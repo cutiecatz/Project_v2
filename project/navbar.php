@@ -30,8 +30,9 @@
                   <li><a href="quo.php">Quotation</a></li>
                   <li><a href="so.php">Sales order</a></li>
                   <li><a href="pick.php">Picking</a></li>
-                  <li><a href="gr.php">Good Receipt</a></li>
                   <li><a href="invoice.php">Invoice</a></li>
+                  <li><a href="gr.php">Good Receipt</a></li>
+                  
                   <li><a href="sum.php">SUMMARY</a></li>
                   
                 </ul>
