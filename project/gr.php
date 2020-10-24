@@ -20,6 +20,7 @@ $result = mysqli_query($conn,$userQuery);
             <th> GOODS RECEIPT ID</th>
             <th> PURCHASE ORDER ID</th>
             <th> INVOICE ID </th>
+            <th> DELIVERED BY </th>
             <th> GOODS RECEIPT DATE </th>
             <th> View</th>
             <th> Show Document</th>
@@ -31,6 +32,7 @@ $result = mysqli_query($conn,$userQuery);
             <?php echo "<td>GR#".$row['gr_id']."</td>" ?>
             <?php echo "<td>PO#".$row['po_id']."</td>" ?>
             <?php echo "<td>INVOICE#".$row['invoice_id']."</td>" ?>
+            <?php echo "<td>".$row['delivery']."</td>" ?>
             <?php echo "<td>".$row['gr_date']."</td>" ?>
             <?php echo "<td><a href=\"grdetail.php?id=".$row['gr_id']."\"> " ?> 
             <span class="fas fa-edit"></a></td>
