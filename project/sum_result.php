@@ -1,15 +1,23 @@
 <?php
-
+require_once "navbar.php";
 require_once "server.php";
-require "navbar.php";
 $date = $_POST['date'];
 $due_date=$_POST['due'];
-$userQuery = "SELECT * FROM `product` JOIN `cutstock` USING (product_id) WHERE cut_date BETWEEN '$date' AND '$due_date'";
+$userQuery = "SELECT DISTINCT product_id,product_name FROM `product` JOIN `cutstock` USING (product_id)
+	JOIN picking USING (pick_id)
+    WHERE pick_date BETWEEN '$date' AND '$due_date' ";
 $result = mysqli_query($conn,$userQuery);
 $i=0;
 while ($row = mysqli_fetch_assoc($result)) { 
-    $qty[$i] = $row['cut_qty'];
-    $name[$i] = $row['product_name'];
+	$id[$i] = $row['product_id'];
+	$name[$i] = $row['product_name'];
+	$Query = "SELECT * FROM cutstock WHERE product_id = '$id[$i]' AND cut_date  BETWEEN '$date' AND '$due_date' ";
+    $res = mysqli_query($conn,$Query);
+	$qty[$i] = 0;
+	while($row2 = mysqli_fetch_assoc($res)){
+		  $q1 = $row2['cut_qty'];
+		$qty[$i] += $q1;   
+	}
     $i++;
 }
 for($i=0;$i<count($name);$i++){

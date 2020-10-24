@@ -17,7 +17,8 @@ while ($row = mysqli_fetch_assoc($result)) {
     $sto[$i] = $row['storage_id'];
     $proid[$i] = $row['product_id'];
     $pick[$i] = $row['pick_id'];
-    $query = "INSERT INTO `cutstock`( `storage_id`,pick_id, `product_id`, `cut_qty`) VALUES ('$sto[$i]','$pick[$i]','$proid[$i]','$qty[$i]')";
+    $pick_date[$i] = $row['pick_date'];
+    $query = "INSERT INTO `cutstock`( `storage_id`,pick_id, `product_id`, `cut_qty`, `cut_date`) VALUES ('$sto[$i]','$pick[$i]','$proid[$i]','$qty[$i]','$pick_date[$i]')";
     $result3 = mysqli_query($conn,$query);
     $Query = "SELECT * FROM cutstock JOIN `storage detail` USING (storage_id,`product_id`) WHERE product_id = $proid[$i]";
     $res = mysqli_query($conn,$Query);
