@@ -23,6 +23,7 @@ $result = mysqli_query($conn,$userQuery);
                       <tr>
                           <td width="400">Product name</td>
                           <td width="246">Description</td>
+                          <td width="246">Weight</td>
                           <td width="246">Quantity</td>
                          
                       </tr>
@@ -31,6 +32,7 @@ $result = mysqli_query($conn,$userQuery);
                  
                         <?php echo "<td>".$row['product_name']."</td>" ?>
                         <?php echo "<td>".$row['product_descrip']."</td>" ?>
+                        <?php echo "<td>".$row['product_weight']."Kg.</td>" ?>
                         <?php echo "<td>".$row['qty']."</td>" ?>
                  </tr>
                  <?php  } ?>
