@@ -7,6 +7,7 @@ $a = $_POST['company_add'];
 $m = $_POST['company_email'];
 $t = $_POST['company_phone'];
 $p = $_POST['company_post'];
+$coun = $_POST['company_country'];
 $city = $_POST['company_city'];
 $userQuery = "INSERT into company ('company_id', 'company_code', 'company_name', 'company_address', 'company_city', 'company_post', 'company_email', 'company_phone') 
 values('$id','$c','$n','$a','$city','$p','$m','$t')";

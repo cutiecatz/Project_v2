@@ -29,6 +29,9 @@ require("server.php");
     <label for="city">City</label>
     <input type="text" name="company_city" placeholder="your company city...">
 
+    <label for="coun">Country</label>
+    <input type="text" name="company_country" placeholder="your company country...">
+
     <label for="pcode">Post Code</label>
     <input type="text" name="company_post" placeholder="your company post code...">
 
