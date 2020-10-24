@@ -18,7 +18,7 @@ require("server.php");
     <input type="text" name="id" placeholder="your vendor id...">
 
     <label for="vname">Vendor Name</label>
-    <input type="text" name="id" placeholder="your vendor name...">
+    <input type="text" name="name" placeholder="your vendor name...">
 
     <label for="add">Address</label>
     <input type="text" name="add" placeholder="your address...">
@@ -30,7 +30,7 @@ require("server.php");
     <input type="text" name="post" placeholder="your post code...">
 
     <label for="phone">Telephone</label>
-    <input type="text" name="post" placeholder="your phone number..">
+    <input type="text" name="phone" placeholder="your phone number..">
 
     <label for="email">E-mail</label>
     <input type="text" name="email" placeholder="your e-mail...">

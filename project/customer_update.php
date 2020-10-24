@@ -11,7 +11,6 @@ if(!$result)
 }
 else
 {
-    echo "Update Customer<br><br>";
     
     $row=mysqli_num_rows($result);
     while($row = mysqli_fetch_assoc($result)) :?>
@@ -28,16 +27,28 @@ else
                   <table width="416" border="0">
                       <tr>
                           <td>Customer Name</td>
-                          <td><textarea rows="5" cols="100" type="text" name="name"><?php echo $row['customer_name'];?></textarea></td>
+                          <td><textarea rows="2" cols="50" type="text" name="name"><?php echo $row['customer_name'];?></textarea></td>
 
                       </tr>
                       <tr>
                           <td>Bill Address</td>
-                          <td><textarea rows="5" cols="100" type="text" name="bill"><?php echo $row['customer_bill'];?></textarea></td>
+                          <td><textarea rows="2" cols="50" type="text" name="bill"><?php echo $row['customer_bill'];?></textarea></td>
+                          <td> City</td>
+                          <td><textarea rows="2" cols="20" type="text" name="bill_city"><?php echo $row['customer_bill_city'];?></textarea></td>
+                          <td>Zipcode</td>
+                          <td><textarea rows="2" cols="7" type="text" name="bill_zip"><?php echo $row['customer_bill_zipcode'];?></textarea></td>
+                          <td>Country</td>
+                          <td><textarea rows="2" cols="7" type="text" name="bill_coun"><?php echo $row['customer_bill_country'];?></textarea></td>
                       </tr>
                       <tr>
                           <td>Ship Address</td>
-                          <td><textarea rows="5" cols="100" type="text" name="ship" ><?php echo $row['customer_ship'];?></textarea></td>
+                          <td><textarea rows="2" cols="50" type="text" name="ship"><?php echo $row['customer_ship'];?></textarea></td>
+                          <td> City</td>
+                          <td><textarea rows="2" cols="20" type="text" name="ship_city"><?php echo $row['customer_ship_city'];?></textarea></td>
+                          <td>Zipcode</td>
+                          <td><textarea rows="2" cols="7" type="text" name="ship_zip"><?php echo $row['customer_ship_zipcode'];?></textarea></td>
+                          <td>Country</td>
+                          <td><textarea rows="2" cols="7" type="text" name="ship_coun"><?php echo $row['customer_ship_country'];?></textarea></td>
                       </tr>
                       <tr>
                           <td>E-mail</td>

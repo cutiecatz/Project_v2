@@ -67,6 +67,7 @@ $result3 = mysqli_query($conn,$userQuery2);
                         <td><h3><a href="so.php">Back To Sale Order <span class="fas fa-arrow-left"></a></h3></td>
                         <?php echo "<td><h3><a href=\"sodetail_create.php?id=".$rfq_id."\">Add Product" ?> 
                         <span class="fas fa-plus"></a></h3></td>
+                        
                     </tr>
                     </table>
                 </form> 

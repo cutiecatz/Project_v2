@@ -7,6 +7,7 @@ $userQuery = "SELECT * FROM `sale order` where sale_id = '$rfq_id'";
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM product ";
 $result2 = mysqli_query($conn,$userQuery2);
+
 $i=1;
 ?>
 <html>
@@ -46,7 +47,11 @@ $i=1;
 </tr>
 <tr>
     <td>Discount</td>
-    <td><input type="text" name="dis" ></td>
+    
+    <td><select name="dis" id="dis">
+        <option value="10">10%</option>
+        <option value="5">5%</option>
+    </select></td>
 </tr>
 <tr>
     <td><input type="submit" value="submit"/></td>
