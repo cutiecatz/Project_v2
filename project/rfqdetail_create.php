@@ -18,7 +18,7 @@ $i=1;
 
 <h1 class="head">Add Request For Quotation:<?php echo $rfq_id ?></h2>
 <div class="container">
-  <form action="rfq_add.php">
+  <form action="rfq_add.php" method="POST">
 
     <label for="id">Request For Quotation ID</label>
     <input type="text" name="rfq_id" placeholder="<?php echo $rfq_id ?>">

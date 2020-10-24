@@ -12,7 +12,7 @@ require("server.php");
 
 <h1 class="head">Add Customer</h1>
 <div class="container">
-  <form action="company_add.php">
+  <form action="company_add.php" method="POST">
 
     <label for="id">ID</label>
     <input type="text" name="company_id" placeholder="your id...">

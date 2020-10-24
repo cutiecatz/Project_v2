@@ -17,7 +17,7 @@ $c=1;
 
 <h1 class="head">Add Purchase Requisition</h1>
 <div class="container">
-  <form action="pr_add.php">
+  <form action="pr_add.php" method="POST">
 
     <label for="id">Purchase Requisition ID</label>
     <input type="text" name="pr_id" placeholder="your id...">

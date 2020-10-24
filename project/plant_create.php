@@ -13,7 +13,7 @@ $result2 = mysqli_query($conn,$userQuery);
 
 <h1 class="head">Add Plant</h1>
 <div class="container">
-  <form action="plant_add.php">
+  <form action="plant_add.php" method="POST">
 
     <label for="id">Plant ID</label>
     <input type="text" name="plant_id" placeholder="your plant id...">

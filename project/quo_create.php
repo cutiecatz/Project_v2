@@ -17,7 +17,7 @@ $result3 = mysqli_query($conn,$userQuery3);
 
 <h1 class="head">Create Quotation</h1>
 <div class="container">
-  <form action="quo_add.php">
+  <form action="quo_add.php" method="POST">
 
     <label for="id">Quotation ID</label>
     <input type="text" name="id" placeholder="your id..." >
