@@ -74,6 +74,32 @@ $result3 = mysqli_query($conn,$Query);
                                 <?php echo "<td>".$row['product_net']."</td>" ?>
                             </tr>
                         <?php } ?>
+                        <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
+                            <tr class="total"> 
+                                <td></td>
+                                <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            
+                                <td>Sub Total |<?php $t = $row['Total']; ?><?php  echo "".$row['Total']."";?></td> 
+                            </tr>
+                            <tr class="total">
+                                <td></td>
+                                <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            
+                            <td>Tax | 7% <?php $tax = $row['TAX']; ?></td> 
+                            </tr>
+                            <tr class="total">
+                                <td></td>
+                                <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            
+                            <td>Total | <?php echo $t+$tax; ?></td> 
+                            </tr>
+                        <?php } ?>
                     </table> 
                 </div>
         </div>
