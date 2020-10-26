@@ -26,7 +26,7 @@ $result = mysqli_query($conn,$userQuery);
             <div class="customer">
                     <div>
                         <p class="Address-Heading">Ship to: </p>
-                        <H3 class="vendor">Vendor</H3>
+                        <H3 class="customer_info">Customer</H3>
                         Customer Name:  <?php echo "".$row['customer_name']."" ?><br>
                         Address: <?php echo "".$row['customer_bill']."" ?><br>
                         <?php echo "".$row['customer_bill_city']." ".$row['customer_bill_zipcode']."" ?><br>
