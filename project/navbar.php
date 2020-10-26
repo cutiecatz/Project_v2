@@ -32,7 +32,7 @@
                   <li><a href="po.php">Purchase order</a></li>
                   <li><a href="invoice_sd.php">Invoice</a></li>
                   <li><a href="gr.php">Good Receipt</a></li>
-                  <li><a href="sum.php">SUMMARY</a></li>
+                  <li><a href="sum.php">Summary</a></li>
                 </ul>
             </div>
           </nav>
