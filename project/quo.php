@@ -1,7 +1,7 @@
 <?php
 require("server.php");
 require("navbar.php");
-$userQuery = "SELECT * FROM `quotation` join company USING (company_id) join vendor USING (vendor_id) join rfq USING(rfq_id)";
+$userQuery = "SELECT * FROM `quotation` join company USING (company_id) join inquiry USING(inquiry_id) join customer USING (customer_id)";
 $result = mysqli_query($conn,$userQuery);
 
 ?>
@@ -19,8 +19,8 @@ $result = mysqli_query($conn,$userQuery);
       <tr>
             <th> QuotationID</th>
             <th> Company Code</th>
-            <th> Vendor </th>
-            <th> RFQID </th>
+            <th> Customer </th>
+            <th> InquiryID </th>
             <th> Date </th>
             <th> View</th>
             <th> Show Document</th>
@@ -31,8 +31,8 @@ $result = mysqli_query($conn,$userQuery);
             <tr>
             <?php echo "<td>QUO#".$row['quo_id']."</td>" ?>
             <?php echo "<td>".$row['company_name']."</td>" ?>
-            <?php echo "<td>".$row['vendor_name']."</td>" ?>
-            <?php echo "<td>RFQ#".$row['rfq_id']."</td>" ?>
+            <?php echo "<td>".$row['customer_name']."</td>" ?>
+            <?php echo "<td>IN#".$row['inquiry_id']."</td>" ?>
             <?php echo "<td>".$row['quo_date']."</td>" ?>
             <?php echo "<td><a href=\"quodetail.php?id=".$row['quo_id']."\"> " ?> 
             <span class="fas fa-edit"></a></td>

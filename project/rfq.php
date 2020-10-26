@@ -1,7 +1,7 @@
 <?php
 require("server.php");
 require("navbar.php");
-$userQuery = "SELECT * FROM `RFQ` join company USING (company_id) join vendor USING (vendor_id)";
+$userQuery = "SELECT * FROM `RFQ` join `purchase requisition` USING (pr_id) join vendor USING (vendor_id) join company USING (company_id)";
 $result = mysqli_query($conn,$userQuery);
 
 ?>
@@ -18,7 +18,7 @@ $result = mysqli_query($conn,$userQuery);
         <table style="width:90%">
       <tr>
             <th> Request For Quotation Number</th>
-            <th> Company Code</th>
+            <th> PR ID </th>
             <th> Vendor </th>
             <th> Request For Quotation Date </th>
             <th> View</th>
@@ -29,7 +29,7 @@ $result = mysqli_query($conn,$userQuery);
           <?php while ($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
             <?php echo "<td>RFQ#".$row['rfq_id']."</td>" ?>
-            <?php echo "<td>".$row['company_name']."</td>" ?>
+            <?php echo "<td>PR#".$row['pr_id']."</td>" ?>
             <?php echo "<td>".$row['vendor_name']."</td>" ?>
             <?php echo "<td>".$row['rfq_date']."</td>" ?>
             <?php echo "<td><a href=\"rfqdetail.php?id=".$row['rfq_id']."\"> " ?> 

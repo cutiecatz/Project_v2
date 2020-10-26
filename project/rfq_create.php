@@ -3,7 +3,7 @@ require("server.php");
 
 $userQuery = "SELECT * FROM `vendor`";
 $result = mysqli_query($conn,$userQuery);
-$userQuery2 = "SELECT * FROM `company`";
+$userQuery2 = "SELECT * FROM `purchase requisition`";
 $result2 = mysqli_query($conn,$userQuery2);
 $i=1;
 $c=1;
@@ -23,13 +23,13 @@ $c=1;
     <label for="id">Request For Quotation ID</label>
     <input type="text" name="rfq_id" placeholder="your id...">
 
-    <label for="name">Company Name</label>
-    <select name="company_id" id="company_id">
+    <label for="name">Purchase Requisition ID</label>
+    <select name="pr" id="pr">
     <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
-        <option value="<?php echo $row['company_id']; ?>"> <?php echo $row['company_name']; $i = $i+1;?> </option>
+        <option value="<?php echo $row['pr_id']; ?>"> <?php echo $row['pr_id'];?> </option>
      <?php } ?> </select>
     
-    <label for="date">Request For Quotation Date</label><br><br>
+    <label for="date">Date</label><br><br>
     <input type="date" name="date" placeholder="your date...">
     <br><br>
     <label for="vid">Vendor  ID</label>

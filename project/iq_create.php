@@ -19,12 +19,11 @@ $result = mysqli_query($conn,$userQuery);
     <label for="id">INQUIRY ID</label>
     <input type="text" name="id" placeholder="your id...">
 
-    <label for="cname">Customer Name</label>
+    <label for="id">Customer</label>
     <select name="cn" id="cn">
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-        <option value="<?php echo $row['customer_id']; ?>"> <?php echo $row['customer_name'];?> </option>
+        <option value="<?php  echo $row['customer_id'] ?>"> <?php echo $row['customer_name'];?> </option>
      <?php } ?> </select>
-   
     <label for="date">Date </label><br><br>
     <input type="date" name="date">
     <br><br>

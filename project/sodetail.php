@@ -3,11 +3,14 @@ require "navbar.php";
 require_once "server.php";
 
 $rfq_id = $_GET['id'];
-$userQuery = "SELECT * FROM `sale detail` r join product d USING (product_id) where sale_id = '$rfq_id'";
+$userQuery = "SELECT * FROM `sale order` join quotation USING (quo_id)  
+                    join `quo detail` USING (quo_id)
+                    join product USING (product_id)
+                    where sale_id = '$rfq_id'";
 $result = mysqli_query($conn,$userQuery);
 $Query = "SELECT SUM(net) AS Total, SUM(discount) AS Dis FROM `sale detail` WHERE sale_id = '$rfq_id'";
 $re2 = mysqli_query($conn,$Query);
-$userQuery2 = "SELECT * FROM `sale order` join employee USING (employee_id) join `customer` USING (customer_id) WHERE sale_id = '$rfq_id' ";
+$userQuery2 = "SELECT * FROM `sale order` JOIN employee USING (employee_id) WHERE sale_id = '$rfq_id'";
 $result3 = mysqli_query($conn,$userQuery2);
 ?>
         <!DOCTYPE html>
@@ -36,12 +39,10 @@ $result3 = mysqli_query($conn,$userQuery2);
                  
                         <?php echo "<td>".$row['product_name']."</td>" ?>
                         <?php echo "<td>".$row['product_descrip']."</td>" ?>
-                        <?php echo "<td>".$row['price']."</td>" ?>
+                        <?php echo "<td>".$row['product_price']."</td>" ?>
                         <?php echo "<td>".$row['qty']."</td>" ?>
-                        <?php echo "<td>".$row['discount']."</td>" ?>
-                        <?php echo "<td>".$row['net']."</td>" ?>
-                        <?php echo "<td><a href=\"sodetail_delete.php?id=".$row['sale_detail_id']."\"> "?>
-                        <span class="fas fa-trash-alt"></a></td>
+                        <?php echo "<td>".$row['product_dis']."</td>" ?>
+                        <?php echo "<td>".$row['product_net']."</td>" ?>
                     
                         </tr>
                         <?php  } ?>
@@ -65,7 +66,7 @@ $result3 = mysqli_query($conn,$userQuery2);
                     <table>
                         <tr>
                         <td><h3><a href="so.php">Back To Sale Order <span class="fas fa-arrow-left"></a></h3></td>
-                        <?php echo "<td><h3><a href=\"sodetail_create.php?id=".$rfq_id."\">Add Product" ?> 
+                        <?php echo "<td><h3><a href=\"sodetail_create.php?id=".$rfq_id."\">Post" ?> 
                         <span class="fas fa-plus"></a></h3></td>
                         
                     </tr>

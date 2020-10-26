@@ -4,9 +4,13 @@ $id = $_POST['quo_id'];
 $n = $_POST['name'];
 $p = $_POST['price'];
 $q = $_POST['qty'];
-$d = $_POST['dis'];
+$userQuery = "SELECT * FROM quotation WHERE quo_id ='$id'";
+$result = mysqli_query($conn,$userQuery);
+while ($row = mysqli_fetch_assoc($result)) {
+    $num = $row['material_dis'];
+}
 $t = $p*$q;
-$d2 = ($t*($d/100));
+$d2 = ($t*($num/100));
 $net = $t-$d2;
 $userQuery = "INSERT INTO `quo detail`( `quo_id`, `product_id`, `qty`, `product_price`, `product_dis`, `product_net`) 
 VALUES ('$id','$n','$q','$p','$d2','$net')";

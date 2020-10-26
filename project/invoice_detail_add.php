@@ -12,10 +12,13 @@ $result = mysqli_query($conn,$userQuery);
 
 while ($row = mysqli_fetch_assoc($result)) { 
     $qty[$i] = $row['qty'];
-    $sto[$i] = $row['storage_id'];
     $proid[$i] = $row['product_id'];
-    $invoice[$i] = $row['invoice_id'];
-    $query = "INSERT INTO `invoice detail`( `storage_id`,pick_id, `product_id`, `cut_qty`) VALUES ('$sto[$i]','$invoice[$i]','$proid[$i]','$qty[$i]')";
+    $price = $row['price'];
+    $dis = $row['discount'];
+    $net = $row['net'];
+    $query = "INSERT INTO `invoice detail`(`invoice_id`, `product_id`, `qty`, `price`, `discount`, `net`)
+              VALUES ('$id','$proid[$i]','$qty[$i]','$price','$dis','$net')";
     $result3 = mysqli_query($conn,$query);
 $i++;
 }
+header("location: invoice.php");

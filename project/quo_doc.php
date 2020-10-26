@@ -2,12 +2,12 @@
 require("server.php");
 $quo_id = $_GET['id'];
 $userQuery = "SELECT * FROM `quotation` 
-                       JOIN vendor  USING (vendor_id)
                        JOIN company  USING (company_id)
-                       JOIN rfq  USING (rfq_id)
+                        JOIN inquiry USING (inquiry_id)
+                        JOIN customer  USING (customer_id)
                        WHERE quo_id = $quo_id";
 $result = mysqli_query($conn,$userQuery);
-$userQuery2 = "SELECT * FROM `quo detail` p inner join product d ON p.product_id = d.product_id where quo_id = '$quo_id'";
+$userQuery2 = "SELECT * FROM `quo detail` p join product d USING(product_id) where quo_id = '$quo_id'";
 $result2 = mysqli_query($conn,$userQuery2);
 $Query = "SELECT SUM(product_net) AS Total, FORMAT(SUM((product_net)*0.07),2) as TAX FROM `quo detail` WHERE quo_id = '$quo_id'";
 $result3 = mysqli_query($conn,$Query);

@@ -7,7 +7,9 @@ $userQuery = "SELECT * FROM `quo detail` inner join product where quo_id = '$rfq
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM product ";
 $result2 = mysqli_query($conn,$userQuery2);
-$i=1;
+$userQuery3 = "SELECT * FROM `quotation` WHERE quo_id='$rfq_id' ";
+$result3 = mysqli_query($conn,$userQuery3);
+
 ?>
 <html>
 <head>
@@ -22,14 +24,17 @@ $i=1;
 <table>
 <tr>
     <td>Quotation ID</td>
-    <td><input type="text" name="quo_id" placeholder="<?php echo $rfq_id ?>"></td>
-   
+    <td><select name="quo_id" id="quo_id">
+    <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
+        <option value="<?php echo $row['quo_id']; ?>"> <?php echo $row['quo_id']; ?> </option>
+     <?php  } ?>
+    </td>
 </tr>
 <tr>
     <td>Product name</td>
     <td><select name="name" id="name">
     <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
-        <option value="<?php echo $row['product_id']; ?>"> <?php echo $row['product_name']; $i+=$i?> </option>
+        <option value="<?php echo $row['product_id']; ?>"> <?php echo $row['product_name']; ?> </option>
      <?php  } ?>
     </td>
 </tr>
@@ -41,10 +46,7 @@ $i=1;
     <td>Quantity</td>
     <td><input type="number" name="qty" ></td>
 </tr>
-<tr>
-    <td>Discount</td>
-    <td><input type="text" name="dis" ></td>
-</tr>
+
 <tr>
     <td><input type="submit" value="submit"/></td>
     <td><input type="reset" value="reset"/></td>

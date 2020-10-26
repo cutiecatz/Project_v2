@@ -17,16 +17,16 @@ $re2 = mysqli_query($conn,$Query);
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
                 <body>
-                    <H1>Purchase Order No : PR# <?php echo $po_id?></H1>
+                    <H1>Purchase Requisition No : PR# <?php echo $po_id?></H1>
 
                 <div class="PO">
                   <table width="500" border="0">
                       <tr>
                           <th width="1000">Product name</th>
                           <th width="500">Description</th>
-                          <th width="346">Price</th>
+                        
                           <th width="246">Quantity</th>
-                          <th width="246">Net</th>
+                        
                           <th width="246">Delete</th>
                       </tr>
                       <div class="POdetail">
@@ -35,9 +35,9 @@ $re2 = mysqli_query($conn,$Query);
                  
                         <?php echo "<td>".$row['product_name']."</td>" ?>
                         <?php echo "<td>".$row['product_descrip']."</td>" ?>
-                        <?php echo "<td>".$row['product_price']."</td>" ?>
+                       
                         <?php echo "<td>".$row['qty']."</td>" ?>
-                        <?php echo "<td>".$row['product_net']."</td>" ?>
+                       
                         <?php echo "<td><a href=\"podetail_delete.php?id=".$row['pr_detail_id']."\"> "?>
             <span class="fas fa-trash-alt"></a></td>
                     
@@ -46,8 +46,8 @@ $re2 = mysqli_query($conn,$Query);
              </table> 
                 <br><br>
             <table>
-                <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
-                <td><h3><a href="po.php">Back To Purchase Order <span class="fas fa-arrow-left"></a></h3></td> 
+            
+                <td><h3><a href="po.php">Back To Purchase Requisition <span class="fas fa-arrow-left"></a></h3></td> 
                 <?php echo "<td><h3><a href=\"podetail_create.php?id=".$po_id."\">Add Product " ?> 
                 <span class="fas fa-file-medical"></a></h3></td>
             </table>
