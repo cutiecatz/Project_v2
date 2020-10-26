@@ -33,7 +33,6 @@ h2 {
 }
 
 .sidebar {
-    position: fixed;
     width: 250px;
     top: 0;
     left: 0;
@@ -53,6 +52,13 @@ h2 {
     margin: 0;
     font-size: 25px;
     text-transform: uppercase;
+}
+
+.sidebar h3 {
+    display: block;
+    padding: 10px 20px;
+    color: #e4b660;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .sidebar a {
