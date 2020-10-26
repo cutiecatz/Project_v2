@@ -43,8 +43,8 @@ $result2 = mysqli_query($conn,$userQuery2);
                 <div class="content">
                 <table class="product">
                         <tr>
-                            <th>Product_ID</th>
-                            <th>Name</th>
+                            <th>Product#</th>
+                            <th>Product Name</th>
                             <th>Quantity</th>
                         </tr>
                         <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
