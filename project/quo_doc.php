@@ -2,9 +2,9 @@
 require("server.php");
 $quo_id = $_GET['id'];
 $userQuery = "SELECT * FROM `quotation` 
-                       JOIN customer  USING (customer_id)
                        JOIN company  USING (company_id)
-                       JOIN rfq  USING (rfq_id)
+                        JOIN inquiry USING (inquiry_id)
+                        JOIN customer  USING (customer_id)
                        WHERE quo_id = $quo_id";
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM `quo detail` p join product d USING(product_id) where quo_id = '$quo_id'";
