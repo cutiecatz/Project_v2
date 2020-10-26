@@ -1,6 +1,6 @@
 <?php
 require_once "server.php";
-$id = $_GET['id'];
+$id = $_POST['id'];
 $n = $_POST['name'];
 $q = $_POST['qty'];
 

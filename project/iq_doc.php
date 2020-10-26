@@ -5,7 +5,7 @@ $userQuery = "SELECT * FROM `inquiry`
                        JOIN customer  USING (customer_id)
                        WHERE inquiry_id = $inquiry_id";
 $result = mysqli_query($conn,$userQuery);
-$userQuery2 = "SELECT * FROM `inquiry detail` p inner join product d ON p.product_id = d.product_id where inquiry_id = '$inquiry_id'";
+$userQuery2 = "SELECT * FROM `inquiry detail` i inner join product p ON i.product_id = p.product_id where inquiry_id = '$inquiry_id'";
 $result2 = mysqli_query($conn,$userQuery2);
 ?>
 <!doctype html>
@@ -25,7 +25,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                             DATE :  <?php echo "".$row['inquiry_date']."" ?><br>
                             Due DATE :  <?php echo "".$row['inquiry_due_date']."" ?><br>
-                        <?php }?>
+
                     </div>
                     <!--------------- ------------->
                 <div class="customer">
@@ -37,22 +37,25 @@ $result2 = mysqli_query($conn,$userQuery2);
                             <?php echo "".$row['customer_bill_city']." ".$row['customer_bill_zipcode']."" ?><br>
                             E-mail: <?php echo "".$row['customer_email']."" ?><br>
                             Phone : <?php echo "".$row['customer_phone']."" ?><br>
+                            <?php }?>
                         </div>
                     </div>
                     <!--------------- ------------->
                 <div class="content">
-                <!-- <table class="product">
+                <table class="product">
                         <tr>
-                        <th colspan="3">Code</th>
-                        <th colspan="3">Name</th>
-                        <th colspan="3">Qty</th>
+                            <th>Product_ID</th>
+                            <th>Name</th>
+                            <th>Quantity</th>
                         </tr>
-                        <tr v-for="datas in data" :key="datas.materialID">
-                            <td colspan="3">{{datas.MaterialCode}}</td>
-                            <td colspan="3">{{datas.MaterialName}}</td>
-                            <td colspan="3">{{datas.qty}}</td>
-                        </tr>
-                    </table>  -->
+                        <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
+                            <tr class="item">
+                                <?php echo "<td>".$row['product_id']."</td>" ?>
+                                <?php echo "<td>".$row['product_descrip']."</td>" ?>
+                                <?php echo "<td>".$row['product_qty']."</td>" ?>
+                            </tr>
+                        <?php } ?>
+                    </table> 
                 </div>
         </div>
     </div>
