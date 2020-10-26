@@ -1,8 +1,6 @@
 <?php
 require("server.php");
-$userQuery = "SELECT * FROM vendor v";
-$result = mysqli_query($conn,$userQuery);
-$userQuery2 = "SELECT * FROM company";
+$userQuery2 = "SELECT * FROM rfq";
 $result2 = mysqli_query($conn,$userQuery2);
 $i=1;
 $c=1;
@@ -21,17 +19,11 @@ $c=1;
 
     <label for="id">Purchase Order ID</label>
     <input type="text" name="po_id" placeholder="your id...">
-    
-    <label for="vendor">Vendor</label>
-    <select name="v" id="v">
-    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-        <option value="<?php echo "$i"; ?>"> <?php echo $row['vendor_name']; $i=$i+1;?> </option>
-     <?php  } ?> </select>
 
-    <label for="ccode">Company Code</label>
+    <label for="ccode">RFQ ID</label>
     <select name="c" id="c">
     <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
-        <option value="<?php $i=1; echo "$c"; ?>"> <?php echo $row['company_code']; $c = $c+1;?> </option>
+        <option value="<?php echo $row['rfq_id']; ?>"> <?php echo $row['rfq_id']; ?> </option>
      <?php } ?> </select>
     
     <label for="pdate">Purchase Order Date </label><br><br>

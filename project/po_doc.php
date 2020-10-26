@@ -2,9 +2,11 @@
 require("server.php");
 $po_id = $_GET['id'];
 $userQuery = "SELECT * FROM `purchase order` 
-                       JOIN vendor  USING (vendor_id)
+                       JOIN  rfq USING (rfq_id) 
+                       JOIN `purchase requisition` USING (pr_id)
+                       JOIN vendor USING (vendor_id)
                        JOIN company USING (company_id)
-                       WHERE po_id = $po_id";
+                       WHERE po_id = '$po_id'";
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM `po detail` p inner join product d ON p.product_id = d.product_id where po_id = '$po_id'";
 $result2 = mysqli_query($conn,$userQuery2);
