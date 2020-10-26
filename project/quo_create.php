@@ -2,10 +2,10 @@
 require("server.php");
 $userQuery = "SELECT * FROM `company`";
 $result = mysqli_query($conn,$userQuery);
-$userQuery2 = "SELECT * FROM `vendor`";
-$result2 = mysqli_query($conn,$userQuery2);
-$userQuery3 = "SELECT * FROM `rfq`";
+$userQuery3 = "SELECT * FROM `inquiry`";
 $result3 = mysqli_query($conn,$userQuery3);
+
+
 ?>
 <html>
 <head>
@@ -27,17 +27,12 @@ $result3 = mysqli_query($conn,$userQuery3);
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <option value="<?php echo $row['company_id']; ?>"> <?php echo $row['company_name'];?> </option>
      <?php  } ?> </select>
+
     
-    <label for="vname">Vendor name</label>
-    <select name="v" id="v">
-    <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
-        <option value="<?php echo $row['vendor_id']; ?>"> <?php echo $row['vendor_name'];?> </option>
-     <?php  } ?> </select>
-    
-    <label for="id">RFQ ID</label>
+    <label for="id">Inquiry ID</label>
     <select name="r" id="r">
     <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
-        <option value="<?php echo $row['rfq_id']; ?>"> RFQ#<?php echo $row['rfq_id'];?> </option>
+        <option value="<?php echo $row['inquiry_id']; ?>"> IN#<?php echo $row['inquiry_id'];?> </option>
      <?php  } ?> </select>
     
     <label for="date">Date</label><br><br>

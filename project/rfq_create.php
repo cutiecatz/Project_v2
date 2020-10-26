@@ -29,7 +29,7 @@ $c=1;
         <option value="<?php echo $row['company_id']; ?>"> <?php echo $row['company_name']; $i = $i+1;?> </option>
      <?php } ?> </select>
     
-    <label for="date">Request For Quotation Date</label><br><br>
+    <label for="date">Date</label><br><br>
     <input type="date" name="date" placeholder="your date...">
     <br><br>
     <label for="vid">Vendor  ID</label>

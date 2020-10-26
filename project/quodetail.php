@@ -5,8 +5,10 @@ require_once "server.php";
 $quo_id = $_GET['id'];
 $userQuery = "SELECT * FROM `quo detail` r join product d USING (product_id) where quo_id = '$quo_id'";
 $result = mysqli_query($conn,$userQuery);
-$Query = "SELECT SUM(product_net) AS Total FROM `quo detail` WHERE quo_id = '$quo_id'";
+$Query = "SELECT SUM(product_net) AS sub FROM `quo detail` WHERE quo_id = '$quo_id'";
 $re2 = mysqli_query($conn,$Query);
+$Query2 = "SELECT * FROM `quotation` WHERE quo_id = '$quo_id'";
+$re = mysqli_query($conn,$Query2);
 ?>
         <!DOCTYPE html>
         <html>
@@ -45,7 +47,8 @@ $re2 = mysqli_query($conn,$Query);
                  <?php  } ?>
                 </table> 
                 <table>
-                    <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
+                    <td><H3>SUB TOTAL: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['sub'] ?></H3></td>
+                    <td><H3>VAT : <?php while ($row = mysqli_fetch_assoc($re)) echo $row['VAT'] ?> %</H3></td>
                    <td><h3><a href="quo.php">Back To Quotation <span class="fas fa-arrow-left"></a></h3></td> 
                    <?php echo "<td><h3><a href=\"quodetail_create.php?id=".$quo_id."\">Add Product " ?> 
                    <span class="fas fa-plus"></a></h3></td>

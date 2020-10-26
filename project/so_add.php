@@ -1,14 +1,14 @@
 <?php
 require_once "server.php";
 $id = $_POST['id'];
-$c = $_POST['cn'];
+$quo = $_POST['quo'];
 $em = $_POST['em'];
 $d = $_POST['due_date'];
 $s = $_POST['ship'];
 $dev = $_POST['dev_date'];
 $id2 = 300000+$id;
-$userQuery = "INSERT INTO `sale order`(`sale_id`, `customer_id`, `employee_id`, `sale_due_date`, `ship_method`, `delivery_date`) 
-      VALUES ('$id2','$c','$em','$d','$s','$dev')";
+$userQuery = "INSERT INTO `sale order`(`sale_id`, `quo_id`, `employee_id`, `sale_due_date`, `ship_method`, `delivery_date`) 
+      VALUES ('$id2','$quo','$em','$d','$s','$dev')";
 $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {
