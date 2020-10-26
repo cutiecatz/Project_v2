@@ -32,7 +32,7 @@
                   <li><a href="pr.php">Purchase requistion</a></li>
                   <li><a href="rfq.php">Request For Quotation</a></li>
                   <li><a href="po.php">Purchase order</a></li>
-                  <li><a href="invoice.php">Invoice</a></li>
+            
                   <li><a href="gr.php">Good Receipt</a></li>
                   <li><a href="sum.php">Summary</a></li>
                 </ul>

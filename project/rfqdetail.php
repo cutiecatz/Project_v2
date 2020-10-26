@@ -26,9 +26,9 @@ $re2 = mysqli_query($conn,$Query);
                       <tr>
                           <td width="400">Product name</td>
                           <td width="246">Description</td>
-                          <td width="246">Price</td>
+                        
                           <td width="246">Quantity</td>
-                          <td width="246">Net</td>
+                        
                           
                       </tr>
                       <?php while ($row = mysqli_fetch_assoc($result)) { ?>     
@@ -36,9 +36,8 @@ $re2 = mysqli_query($conn,$Query);
                  
                         <?php echo "<td>".$row['product_name']."</td>" ?>
                         <?php echo "<td>".$row['product_descrip']."</td>" ?>
-                        <?php echo "<td>".$row['product_price']."</td>" ?>
+                       
                         <?php echo "<td>".$row['qty']."</td>" ?>
-                        <?php echo "<td>".$row['product_net']."</td>" ?>
                     
                  </tr>
                  <?php  } ?>

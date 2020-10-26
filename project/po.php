@@ -22,8 +22,9 @@ $result = mysqli_query($conn,$userQuery);
         <table style="width:90%">
           <tr>
               <th> Purchase Order Number</th>
-              <th> Vendor </th>
               <th> RFQ ID</th>
+              <th> Vendor </th>
+              
               <th> Purchase Order Date </th>
               <th> View</th>
               <th> Show Document</th>
