@@ -5,8 +5,8 @@ $userQuery = "SELECT * FROM `inquiry`
                        JOIN customer  USING (customer_id)
                        WHERE inquiry_id = $inquiry_id";
 $result = mysqli_query($conn,$userQuery);
-// $userQuery2 = "SELECT * FROM `po detail` p inner join product d ON p.product_id = d.product_id where po_id = '$po_id'";
-// $result2 = mysqli_query($conn,$userQuery2);
+$userQuery2 = "SELECT * FROM `inquiry detail` p inner join product d ON p.product_id = d.product_id where inquiry_id = '$inquiry_id'";
+$result2 = mysqli_query($conn,$userQuery2);
 ?>
 <div class="middle">
        <div class="document">
