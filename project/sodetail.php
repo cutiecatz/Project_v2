@@ -30,6 +30,7 @@ $result3 = mysqli_query($conn,$userQuery2);
                           <td width="400">Product name</td>
                           <td width="246">Description</td>
                           <td width="246">Unit/Price</td>
+                        
                           <td width="246">Quantity</td>
                           <td width="246">Discount</td>
                           <td width="246">Net </td>
@@ -40,6 +41,7 @@ $result3 = mysqli_query($conn,$userQuery2);
                         <?php echo "<td>".$row['product_name']."</td>" ?>
                         <?php echo "<td>".$row['product_descrip']."</td>" ?>
                         <?php echo "<td>".$row['product_price']."</td>" ?>
+                        
                         <?php echo "<td>".$row['qty']."</td>" ?>
                         <?php echo "<td>".$row['product_dis']."</td>" ?>
                         <?php echo "<td>".$row['product_net']."</td>" ?>

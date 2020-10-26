@@ -4,7 +4,7 @@ $userQuery2 = "SELECT * FROM `invoice`";
 $result2 = mysqli_query($conn,$userQuery2);
 $userQuery3 = "SELECT * FROM `purchase order`";
 $result3 = mysqli_query($conn,$userQuery3);
-$userQuery4 = "SELECT * FROM `sale order`";
+$userQuery4 = "SELECT * FROM `storage`";
 $result4 = mysqli_query($conn,$userQuery4);
 
 ?>
@@ -23,16 +23,16 @@ $result4 = mysqli_query($conn,$userQuery4);
     <label for="id">GOODS RECEIPT ID</label>
     <input type="text" name="gr_id" placeholder="your id...">
 
-    <label for="id">INVOICE ID</label>
-    <select name="in" id="in">
-    <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
-        <option value="<?php echo $row['invoice_id']; ?>"> INVOICE#<?php echo $row['invoice_id'];?> </option>
-     <?php } ?> </select>
-
     <label for="id">PURCHASE ORDER ID</label>
     <select name="po" id="po">
     <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
         <option value="<?php echo $row['po_id']; ?>"> PO#<?php echo $row['po_id'];?> </option>
+     <?php } ?> </select>
+
+     <label for="id">Storage Location</label>
+    <select name="sto" id="sto">
+    <?php while ($row = mysqli_fetch_assoc($result4)) { ?>
+        <option value="<?php echo $row['storage_id']; ?>"> <?php echo $row['storage_name'];?> </option>
      <?php } ?> </select>
 
     <label for="id">DELIVERY</label>

@@ -16,10 +16,8 @@ $result = mysqli_query($conn,$userQuery);
 while ($row = mysqli_fetch_assoc($result)) { 
     $qty[$i] = $row['qty'];
     $proid[$i] = $row['product_id'];
-    $price[$i] = $row['product_price'];
-    $net[$i] = $row['product_net'];
-    $query = "INSERT INTO `rfq detail`(`rfq_id`, `product_id`, `qty`, `product_price`, `product_net`)
-                 VALUES ('$id','$proid[$i]','$qty[$i]','$price[$i]','$net[$i]')";
+    $query = "INSERT INTO `rfq detail`(`rfq_id`, `product_id`, `qty`)
+                 VALUES ('$id','$proid[$i]','$qty[$i]')";
     $result3 = mysqli_query($conn,$query);
 $i++;
 }

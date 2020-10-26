@@ -43,7 +43,7 @@ $re2 = mysqli_query($conn,$Query);
                  <?php  } ?>
              </table>
             <table>
-                    <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
+            
                    <td><h3><a href="rfq.php">Back To RFQ <span class="fas fa-arrow-left"></a></h3></td> 
                    <?php echo "<td><h3><a href=\"rfqdetail_create.php?id=".$rfq_id."\">Post" ?> 
                    <span class="fas fa-plus"></a></h3></td>

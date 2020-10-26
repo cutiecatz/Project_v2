@@ -23,9 +23,8 @@ $result = mysqli_query($conn,$userQuery);
                       <tr>
                           <td width="400">Product name</td>
                           <td width="246">Description</td>
-                          <td width="246">Weight</td>
+                          <td width="246">Weight/Unit</td>
                           <td width="246">Quantity</td>
-                         
                       </tr>
                       <?php while ($row = mysqli_fetch_assoc($result)) { ?>     
                  <tr>
@@ -38,7 +37,8 @@ $result = mysqli_query($conn,$userQuery);
                  <?php  } ?>
                 </table> 
                 <table>
-                   <td><h3><a href="pick.php">Back To Goods Receipt <span class="fas fa-arrow-left"></a></h3></td> 
+                   <td><h3><a href="gr.php">Back To Goods Receipt <span class="fas fa-arrow-left"></a></h3></td> 
+                   <?php echo "<td><h3><a href=\"gr_addstock.php?id=".$gr."\">POST</a></h3></td>" ?>
                     </table> 
                 </form> 
                 </body>
