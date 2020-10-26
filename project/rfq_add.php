@@ -2,10 +2,10 @@
 require_once "server.php";
 $id = $_POST['rfq_id'];
 $v = $_POST['vendor_id'];
-$com = $_POST['company_id'];
+$com = $_POST['pr'];
 $d = $_POST['date'];
 $id2 = 3000+$id;
-$userQuery = "INSERT into RFQ values('$id2','$v','$com','$d')";
+$userQuery = "INSERT into RFQ values('$id2','$com','$v','$d')";
 $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {

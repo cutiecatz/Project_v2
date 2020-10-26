@@ -3,7 +3,7 @@ require_once "server.php";
 $id = $_POST['sid'];
 $pid = $_POST['id'];
 $qty = $_POST['qty'];
-$Query = "SELECT * FROM `storage detail` WHERE product_id = $pid";
+$Query = "SELECT * FROM `storage detail` WHERE product_id = $pid and storage_id = '$id'";
 $res = mysqli_query($conn,$Query);
     while ($row2 = mysqli_fetch_assoc($res)){
         $stock = $row2['product_qty'];
