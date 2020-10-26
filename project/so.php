@@ -1,7 +1,7 @@
 <?php
 require("server.php");
 require("navbar.php");
-$userQuery = "SELECT * FROM `sale order` join quotation USING (quo_id) join employee USING (employee_id) ";
+$userQuery = "SELECT * FROM `sale order` join quotation USING (quo_id) join employee USING (employee_id) join inquiry USING (inquiry_id) join customer USING (customer_id) ";
 $result = mysqli_query($conn,$userQuery);
 
 ?>
@@ -19,6 +19,7 @@ $result = mysqli_query($conn,$userQuery);
       <tr>
             <th> SALE ORDER ID</th>
             <th> Quotation ID</th>
+            <th> Customer</th>
             <th> EMPLOYEE</th>
             <th> DATE </th>
             <th> View</th>
@@ -30,6 +31,7 @@ $result = mysqli_query($conn,$userQuery);
             <tr>
             <?php echo "<td>SO#".$row['sale_id']."</td>" ?>
             <?php echo "<td>QUO#".$row['quo_id']."</td>" ?>
+            <?php echo "<td>".$row['customer_name']."</td>" ?>
             <?php echo "<td>".$row['employee_name']."</td>" ?>
             <?php echo "<td>".$row['sale_date']."</td>" ?>
             

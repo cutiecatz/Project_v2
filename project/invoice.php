@@ -1,9 +1,10 @@
 <?php
 require("server.php");
 require('navbar.php');
-$userQuery = "SELECT * FROM invoice
-                      JOIN customer  USING (customer_id)
-                      JOIN company USING (company_id)";
+$userQuery = "SELECT * FROM invoice JOIN `sale order` USING (sale_id)
+JOIN quotation USING (quo_id)
+JOIN inquiry USING (inquiry_id)
+                                    JOIN customer  USING (customer_id)";
 $result = mysqli_query($conn,$userQuery);
 
 ?>
@@ -21,7 +22,6 @@ $result = mysqli_query($conn,$userQuery);
           <tr>
               <th> Invoice Number</th>
               <th> Customer </th>
-              <th> Company Code</th>
               <th> Purchase Order Date </th>
               <th> View</th>
               <th> Show Document</th>
@@ -32,7 +32,6 @@ $result = mysqli_query($conn,$userQuery);
           <tr>
               <?php echo "<td>INVOICE#".$row['invoice_id']."</td>" ?>
               <?php echo "<td>".$row['customer_name']."</td>" ?>
-              <?php echo "<td>".$row['company_code']."</td>" ?>
               <?php echo "<td>".$row['invoice_date']."</td>" ?>            
               <?php echo "<td><a href=\"invoice_detail.php?id=".$row['invoice_id']."\"> " ?> 
               <span class="fas fa-eye"></a></td>

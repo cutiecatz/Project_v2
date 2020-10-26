@@ -1,15 +1,12 @@
 <?php
 require_once "server.php";
 $id = $_POST['invoice_id'];
-$id2 = $_POST['sale'];
-$cus = $_POST['cus'];
-$com = $_POST['com'];
 $sale = $_POST['sale'];
 $d = $_POST['date'];
 $id = $id+5000;
 
-$userQuery = "INSERT into `invoice` 
-                values('$id','$cus','$sale','$com','$d',0,0,0)";
+$userQuery = "INSERT INTO `invoice`(`invoice_id`, `sale_id`, `invoice_date`, `invoice_tax`, `invoice_net`, `invoice_total`) 
+                values('$id','$sale','$d',0,0,0)";
 $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {
