@@ -1,9 +1,8 @@
 <?php
 require("server.php");
 require("navbar.php");
-$userQuery = "SELECT * FROM `rfq` join `purchase requisition` USING (pr_id) 
-                                  join vendor USING (vendor_id) 
-                                  join company USING (company_id)";
+$userQuery = "SELECT * FROM RFQ join `purchase requisition` USING (pr_id) join vendor USING (vendor_id) join company USING (company_id)";
+$result = mysqli_query($conn,$userQuery);
 $result = mysqli_query($conn,$userQuery);
 
 ?>
@@ -41,7 +40,7 @@ $result = mysqli_query($conn,$userQuery);
             <span class="fas fa-file"></a></td>
             <?php echo "<td><a href=\"rfq_delete.php?id=".$row['rfq_id']."\"> "?>
             <span class="fas fa-trash-alt"></a></td>
+            <?php }?>
             </tr>
-          <?php }?>
       </div>
       </div>
