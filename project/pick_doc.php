@@ -13,11 +13,9 @@ $userQuery = "SELECT * FROM `picking`
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM `cutstock`  
                                 join product USING(product_id)
-                                join `storage detail` USING(storage_id)
+                                join `storage detail` USING(storage_id, product_id)
                                 where pick_id = '$pick_id'";
 $result2 = mysqli_query($conn,$userQuery2);
-// $Query = "SELECT SUM(net) AS Total, FORMAT(SUM((net)*0.07),2) as TAX FROM `sale detail` WHERE sale_id = '$sale_id'";
-// $result3 = mysqli_query($conn,$Query);
 ?>
 <!doctype html>
 <html>
@@ -74,10 +72,9 @@ $result2 = mysqli_query($conn,$userQuery2);
                             <?php echo "<td>".$row['sale_due_date']."</td>" ?>
                             <?php echo "<td> Destination </td>" ?>
                             <?php echo "<td> Net 30 </td>" ?>
-                        </tr>
                         <?php } ?>
+                        </tr>
                 </table>
-                <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
                 <table class="stock">
                         <tr>
                             <th>Product#</th>
@@ -87,8 +84,9 @@ $result2 = mysqli_query($conn,$userQuery2);
                             <th>Quantity Packed</th>
                             <th>Storage Location</th>
                         </tr>
+                <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
                         <tr class="order_info">
-                            <?php echo "<td>".$row['product_id ']."</td>" ?>
+                            <?php echo "<td>".$row['product_id']."</td>" ?>
                             <?php echo "<td>".$row['product_descrip']."</td>" ?>
                             <?php echo "<td>".$row['cut_qty']."</td>" ?>
                             <?php echo "<td>".$row['product_qty']."</td>" ?>
