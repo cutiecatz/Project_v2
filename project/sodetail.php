@@ -3,7 +3,7 @@ require "navbar.php";
 require_once "server.php";
 
 $rfq_id = $_GET['id'];
-$userQuery = "SELECT * FROM `sale order` join quotation USING (quo_id)  
+$userQuery = "SELECT * FROM `sale order` join quotation USING (quo_id) 
                     join `quo detail` USING (quo_id)
                     join product USING (product_id)
                     where sale_id = '$rfq_id'";

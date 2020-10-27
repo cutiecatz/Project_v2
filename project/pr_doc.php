@@ -7,7 +7,7 @@ $userQuery = "SELECT * FROM `purchase requisition`
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM `pr detail` join product USING(product_id) where pr_id = '$pr_id'";
 $result2 = mysqli_query($conn,$userQuery2);
-$Query = "SELECT SUM(product_net) AS Total, FORMAT(SUM((product_net)*0.07),2) as TAX FROM `pr detail` WHERE pr_id = '$pr_id'";
+$Query = "SELECT SUM(product_net * qty) AS Total, FORMAT(SUM((product_net)*0.07),2) as TAX FROM `pr detail` WHERE pr_id = '$pr_id'";
 $result3 = mysqli_query($conn,$Query);
 ?>
 <!doctype html>
@@ -20,12 +20,12 @@ $result3 = mysqli_query($conn,$Query);
             <header>
                     <div class="header">
                         <h1>Purchase Requisition</h1>
-                        Purchase Requisitionn#: <?php echo $pr_id;?><br>
+                        Purchase Requisition#: <?php echo $pr_id;?><br>
                     </div>
                 </header>
                 <div class="date">
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                    Purchase Requisitionn DATE :  <?php echo "".$row['pr_date']."" ?><br>
+                    Purchase Requisition DATE :  <?php echo "".$row['pr_date']."" ?><br>
                     </div>
                     <!--------------- ------------->
                 <div class="company">

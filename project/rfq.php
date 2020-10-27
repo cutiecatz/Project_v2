@@ -3,7 +3,6 @@ require("server.php");
 require("navbar.php");
 $userQuery = "SELECT * FROM RFQ join `purchase requisition` USING (pr_id) join vendor USING (vendor_id) join company USING (company_id)";
 $result = mysqli_query($conn,$userQuery);
-$result = mysqli_query($conn,$userQuery);
 
 ?>
 <html>
@@ -17,7 +16,7 @@ $result = mysqli_query($conn,$userQuery);
       <h1 class="phead">Request For Quotation</h1>
       <div class="PO">
       <table style="width:90%">
-          <tr>
+        <tr>
             <th> Request For Quotation Number</th>
             <th> PR ID </th>
             <th> Vendor </th>
@@ -25,8 +24,7 @@ $result = mysqli_query($conn,$userQuery);
             <th> View</th>
             <th> Show Document</th>
             <th> Delete</th>
-          </tr>
-      </table>
+        </tr>
       <div class="POdetail">
           <?php while ($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
@@ -40,7 +38,9 @@ $result = mysqli_query($conn,$userQuery);
             <span class="fas fa-file"></a></td>
             <?php echo "<td><a href=\"rfq_delete.php?id=".$row['rfq_id']."\"> "?>
             <span class="fas fa-trash-alt"></a></td>
-            <?php }?>
+            <br>
             </tr>
+            <?php }?>
+            </table>
       </div>
       </div>

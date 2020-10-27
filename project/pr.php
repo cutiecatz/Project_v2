@@ -39,5 +39,6 @@ $result = mysqli_query($conn,$userQuery);
             <br>
           </tr>
           <?php }?>
+          </table>
       </div>
       </div>

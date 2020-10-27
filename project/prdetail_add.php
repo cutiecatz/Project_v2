@@ -3,9 +3,10 @@ require_once "server.php";
 $id = $_POST['pr'];
 $n = $_POST['name'];
 $q = $_POST['qty'];
+$p = $_POST['price'];
 
-$userQuery = "INSERT INTO `pr detail`( `pr_id`,product_id ,`qty`) 
-VALUES ('$id','$n','$q')";
+$userQuery = "INSERT INTO `pr detail`( `pr_id`,product_id ,`qty`,`product_net`) 
+VALUES ('$id','$n','$q', '$p')";
 $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {
