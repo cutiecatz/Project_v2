@@ -26,7 +26,7 @@ $result3 = mysqli_query($conn,$Query);
                         <h1>Sale Order</h1>
                         Sale Order#: <?php echo $sale_id;?><br>
                     </div>
-                </header>
+            </header>
                 <div class="date">
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                             Sale Order DATE :  <?php echo "".$row['sale_date']."" ?><br>
