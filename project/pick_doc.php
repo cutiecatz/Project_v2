@@ -38,7 +38,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                 <div class="company_to">
                         <div>
                             <p class="Address-Heading_from">From : </p>
-                            Customer Name:  <?php echo "".$row['company_name']."" ?><br>
+                            Name:  <?php echo "".$row['company_name']."" ?><br>
                             Address: <?php echo "".$row['company_address']."" ?><br>
                             <?php echo "".$row['company_city']." ".$row['company_post']." ".$row['company_country']."" ?><br>
                             E-mail: <?php echo "".$row['company_email']."" ?><br>
@@ -48,7 +48,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                 <div class="customer_from">
                         <div>
                             <p class="Address-Heading_from">To : </p>
-                            Customer Name:  <?php echo "".$row['company_name']."" ?><br>
+                            Name:  <?php echo "".$row['company_name']."" ?><br>
                             Address: <?php echo "".$row['company_address']."" ?><br>
                             <?php echo "".$row['company_city']." ".$row['company_post']." ".$row['company_country']."" ?><br>
                             E-mail: <?php echo "".$row['company_email']."" ?><br>

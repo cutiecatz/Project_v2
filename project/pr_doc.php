@@ -1,15 +1,13 @@
 <?php
 require("server.php");
-$quo_id = $_GET['id'];
-$userQuery = "SELECT * FROM `quotation` 
-                       JOIN company  USING (company_id)
-                        JOIN inquiry USING (inquiry_id)
-                        JOIN customer  USING (customer_id)
-                       WHERE quo_id = $quo_id";
+$pr_id = $_GET['id'];
+$userQuery = "SELECT * FROM `purchase requisition` 
+                        JOIN company  USING (company_id)
+                        WHERE pr_id = $pr_id";
 $result = mysqli_query($conn,$userQuery);
-$userQuery2 = "SELECT * FROM `quo detail` p join product d USING(product_id) where quo_id = '$quo_id'";
+$userQuery2 = "SELECT * FROM `pr detail` join product USING(product_id) where pr_id = '$pr_id'";
 $result2 = mysqli_query($conn,$userQuery2);
-$Query = "SELECT SUM(product_net) AS Total, FORMAT(SUM((product_net)*0.07),2) as TAX FROM `quo detail` WHERE quo_id = '$quo_id'";
+$Query = "SELECT SUM(product_net) AS Total, FORMAT(SUM((product_net)*0.07),2) as TAX FROM `pr detail` WHERE pr_id = '$pr_id'";
 $result3 = mysqli_query($conn,$Query);
 ?>
 <!doctype html>
@@ -21,13 +19,13 @@ $result3 = mysqli_query($conn,$Query);
         <div class="document">
             <header>
                     <div class="header">
-                        <h1>Quotation</h1>
-                        Quotation#: <?php echo $quo_id;?><br>
+                        <h1>Purchase Requisition</h1>
+                        Purchase Requisitionn#: <?php echo $pr_id;?><br>
                     </div>
                 </header>
                 <div class="date">
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                            Quotation DATE :  <?php echo "".$row['quo_date']."" ?><br>
+                    Purchase Requisitionn DATE :  <?php echo "".$row['pr_date']."" ?><br>
                     </div>
                     <!--------------- ------------->
                 <div class="company">
@@ -38,17 +36,6 @@ $result3 = mysqli_query($conn,$Query);
                             <?php echo "".$row['company_city']." ".$row['company_post']." ".$row['company_country']."" ?><br>
                             E-mail: <?php echo "".$row['company_email']."" ?><br>
                             Phone : <?php echo "".$row['company_phone']."" ?><br>
-                        </div>
-                </div>
-                    <!--------------- ------------->
-                    <div class="customer">
-                        <div>
-                            <p class="Address-Heading_to">To : </p>
-                            Customer Name:  <?php echo "".$row['customer_name']."" ?><br>
-                            Address: <?php echo "".$row['customer_bill']."" ?><br>
-                            <?php echo "".$row['customer_bill_city']." ".$row['customer_bill_zipcode']."" ?><br>
-                            E-mail: <?php echo "".$row['customer_email']."" ?><br>
-                            Phone : <?php echo "".$row['customer_phone']."" ?><br>
                             <?php }?>
                         </div>
                 </div>
@@ -59,18 +46,13 @@ $result3 = mysqli_query($conn,$Query);
                             <th>Product#</th>
                             <th>Product Name</th>
                             <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Discount</th>
-                            <th>Net Price</th>
+                            <th>Price</th>
                         </tr>
                         <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
                             <tr class="item">
                                 <?php echo "<td>".$row['product_id']."</td>" ?>
                                 <?php echo "<td>".$row['product_descrip']."</td>" ?>
-                                <?php echo "<td>".$row['product_descrip']."</td>" ?>
                                 <?php echo "<td>".$row['qty']."</td>" ?>
-                                <?php echo "<td>".$row['product_price']."</td>" ?>
-                                <?php echo "<td>".$row['product_dis']."</td>" ?>
                                 <?php echo "<td>".$row['product_net']."</td>" ?>
                             </tr>
                         <?php } ?>
@@ -89,7 +71,7 @@ $result3 = mysqli_query($conn,$Query);
                                             <td></td>
                                             <td></td>
                                             
-                            <td>Tax | 7% <?php $tax = $row['TAX']; ?></td> 
+                            <td>Tax | INCLUDE </td> 
                             </tr>
                             <tr class="total">
                                 <td></td>
@@ -97,7 +79,15 @@ $result3 = mysqli_query($conn,$Query);
                                             <td></td>
                                             <td></td>
                                             
-                            <td>Total | <?php echo $t+$tax; ?></td> 
+                            <td>Shipping Fees | INCLUDE</td> 
+                            </tr>
+                            <tr class="total">
+                                <td></td>
+                                <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            
+                            <td>Total | <?php echo $t; ?></td> 
                             </tr>
                         <?php } ?>
                     </table> 

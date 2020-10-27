@@ -36,7 +36,7 @@ $result3 = mysqli_query($conn,$Query);
                 <div class="company">
                         <div>
                             <p class="Address-Heading_from">From : </p>
-                            Customer Name:  <?php echo "".$row['company_name']."" ?><br>
+                            Company Name:  <?php echo "".$row['company_name']."" ?><br>
                             Address: <?php echo "".$row['company_address']."" ?><br>
                             <?php echo "".$row['company_city']." ".$row['company_post']." ".$row['company_country']."" ?><br>
                             E-mail: <?php echo "".$row['company_email']."" ?><br>

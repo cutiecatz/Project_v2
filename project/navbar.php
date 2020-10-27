@@ -18,11 +18,10 @@
                   <li><a href="company.php">Company</a></li>
                   <li><a href="product.php">Product</a></li>
                   <li><a href="plant.php">Inventory</a></li>
-                  <li><a href="vendor.php">Vendors</a></li>
+                  <li><a href="vendor.php">Vendor</a></li>
                   <li><a href="employee.php">Employee</a></li>
-                  <li><a href="customer.php">Customers</a></li>
+                  <li><a href="customer.php">Customer</a></li>
                   <li><h3>Sales and Distribution</h3></li>
-                  
                   <li><a href="iq.php">Inquiry</a></li>
                   <li><a href="quo.php">Quotation</a></li>
                   <li><a href="so.php">Sales order</a></li>
@@ -32,7 +31,7 @@
                   <li><a href="pr.php">Purchase requistion</a></li>
                   <li><a href="rfq.php">Request For Quotation</a></li>
                   <li><a href="po.php">Purchase order</a></li>
-            
+                  <li><a href="invoice.php">Invoice</a></li>
                   <li><a href="gr.php">Good Receipt</a></li>
                   <li><a href="sum.php">Summary</a></li>
                 </ul>
