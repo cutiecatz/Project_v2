@@ -2,13 +2,13 @@
 require("server.php");
 $pick_id = $_GET['id'];
 $userQuery = "SELECT * FROM `picking` 
-                        JOIN sale order USING (sale_id)
-                        JOIN storage USING (storage_id)
+                        JOIN `sale order` USING (sale_id)
                         JOIN quotation USING (quo_id)
                         JOIN inquiry USING (inquiry_id)
-                        JOIN customer USING (customer_id)
+                        JOIN storage USING (storage_id)
                         JOIN employee  USING (employee_id)
                         JOIN company  USING (company_id)
+                        JOIN customer USING (customer_id)
                        WHERE pick_id = $pick_id";
 $result = mysqli_query($conn,$userQuery);
 // $userQuery2 = "SELECT * FROM `sale detail` p join product d USING(product_id) where sale_id = '$sale_id'";
@@ -31,28 +31,46 @@ $result = mysqli_query($conn,$userQuery);
             </header>
                 <div class="date">
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                            Sale Order DATE :  <?php echo "".$row['pick_date']."" ?><br>
+                            Picking DATE :  <?php echo "".$row['pick_date']."" ?><br>
                 </div>
                     <!--------------- ------------->
-                <div class="company">
+                <div class="company_to">
                         <div>
                             <p class="Address-Heading_from">From : </p>
                             Customer Name:  <?php echo "".$row['company_name']."" ?><br>
                             Address: <?php echo "".$row['company_address']."" ?><br>
                             <?php echo "".$row['company_city']." ".$row['company_post']." ".$row['company_country']."" ?><br>
                             E-mail: <?php echo "".$row['company_email']."" ?><br>
-                            Phone : <?php echo "".$row['company_phone']."" ?><br>
+                            Phone : <?php echo "0".$row['company_phone']."" ?><br>
                         </div>
                 </div>
-                <div class="customer">
+                <div class="customer_from">
                         <div>
-                            <p class="Address-Heading_to">To : </p>
-                            Customer Name:  <?php echo "".$row['customer_name']."" ?><br>
-                            Address: <?php echo "".$row['customer_bill']."" ?><br>
-                            <?php echo "".$row['customer_bill_city']." ".$row['customer_bill_zipcode']."" ?><br>
-                            E-mail: <?php echo "".$row['customer_email']."" ?><br>
-                            Phone : <?php echo "".$row['customer_phone']."" ?><br>
-                            <?php }?>
+                            <p class="Address-Heading_from">To : </p>
+                            Customer Name:  <?php echo "".$row['company_name']."" ?><br>
+                            Address: <?php echo "".$row['company_address']."" ?><br>
+                            <?php echo "".$row['company_city']." ".$row['company_post']." ".$row['company_country']."" ?><br>
+                            E-mail: <?php echo "".$row['company_email']."" ?><br>
+                            Phone : <?php echo "0".$row['company_phone']."" ?><br>
                         </div>
                 </div>
+                <div class="content">
+                <table class="info">
+                        <tr>
+                            <th>Order#</th>
+                            <th>S.O.Date</th>
+                            <th>Shipped VIA</th>
+                            <th>Delivery Date</th>
+                            <th>F.O.B. Point </th>
+                            <th>TERMS </th>
+                        </tr>
+                            <tr class="order_info">
+                                <?php echo "<td>".$row['sale_id']."</td>" ?>
+                                <?php echo "<td>".$row['sale_date']."</td>" ?>
+                                <?php echo "<td>".$row['ship_method']."</td>" ?>
+                                <?php echo "<td>".$row['sale_due_date']."</td>" ?>
+                                <?php echo "<td> Destination </td>" ?>
+                                <?php echo "<td> Net 30 </td>" ?>
+                            </tr>
+                        <?php } ?>
 </body>
