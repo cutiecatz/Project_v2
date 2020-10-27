@@ -1,5 +1,4 @@
 <?php
-require "navbar.php";
 require_once "server.php";
 
 $rfq_id = $_GET['id'];
@@ -12,13 +11,14 @@ $i=1;
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+    <link rel="stylesheet" type="text/css" href="../project/css/style_v2.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<h2>Add INQUIRY PRODUCT:<?php echo $rfq_id ?></h2>
-<form action="iqdetail_add.php" method="POST" style="border:1px solid gray;">
+<h2 class="head">Add INQUIRY PRODUCT:<?php echo $rfq_id ?></h2>
+<div class="container">
+<form action="iqdetail_add.php" method="POST" >
 <table>
 <tr>
     <td>INQUIRY ID</td>
@@ -42,6 +42,7 @@ $i=1;
 </tr>
 <tr>
     <td><input type="submit" value="submit"/></td>
+    
     <td><input type="reset" value="reset"/></td>
 </tr>
 </table>
