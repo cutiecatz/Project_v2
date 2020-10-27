@@ -4,7 +4,10 @@ $pick_id = $_GET['id'];
 $userQuery = "SELECT * FROM `picking` 
                         JOIN sale order USING (sale_id)
                         JOIN storage USING (storage_id)
+                        JOIN quotation USING (quo_id)
+                        JOIN inquiry USING (inquiry_id)
                         JOIN customer USING (customer_id)
+                        JOIN employee  USING (employee_id)
                         JOIN company  USING (company_id)
                        WHERE pick_id = $pick_id";
 $result = mysqli_query($conn,$userQuery);
