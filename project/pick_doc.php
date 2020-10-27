@@ -11,8 +11,11 @@ $userQuery = "SELECT * FROM `picking`
                         JOIN customer USING (customer_id)
                        WHERE pick_id = $pick_id";
 $result = mysqli_query($conn,$userQuery);
-// $userQuery2 = "SELECT * FROM `sale detail` p join product d USING(product_id) where sale_id = '$sale_id'";
-// $result2 = mysqli_query($conn,$userQuery2);
+$userQuery2 = "SELECT * FROM `cutstock`  
+                                join product USING(product_id)
+                                join `storage detail` USING(storage_id)
+                                where pick_id = '$pick_id'";
+$result2 = mysqli_query($conn,$userQuery2);
 // $Query = "SELECT SUM(net) AS Total, FORMAT(SUM((net)*0.07),2) as TAX FROM `sale detail` WHERE sale_id = '$sale_id'";
 // $result3 = mysqli_query($conn,$Query);
 ?>
@@ -64,13 +67,35 @@ $result = mysqli_query($conn,$userQuery);
                             <th>F.O.B. Point </th>
                             <th>TERMS </th>
                         </tr>
-                            <tr class="order_info">
-                                <?php echo "<td>".$row['sale_id']."</td>" ?>
-                                <?php echo "<td>".$row['sale_date']."</td>" ?>
-                                <?php echo "<td>".$row['ship_method']."</td>" ?>
-                                <?php echo "<td>".$row['sale_due_date']."</td>" ?>
-                                <?php echo "<td> Destination </td>" ?>
-                                <?php echo "<td> Net 30 </td>" ?>
-                            </tr>
+                        <tr class="order_info">
+                            <?php echo "<td>".$row['sale_id']."</td>" ?>
+                            <?php echo "<td>".$row['sale_date']."</td>" ?>
+                            <?php echo "<td>".$row['ship_method']."</td>" ?>
+                            <?php echo "<td>".$row['sale_due_date']."</td>" ?>
+                            <?php echo "<td> Destination </td>" ?>
+                            <?php echo "<td> Net 30 </td>" ?>
+                        </tr>
                         <?php } ?>
+                </table>
+                <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
+                <table class="stock">
+                        <tr>
+                            <th>Product#</th>
+                            <th>Product Description</th>
+                            <th>Quantity Ordered</th>
+                            <th>Storage Location</th>
+                            <th>Quantity Packed</th>
+                            <th>Storage Location</th>
+                        </tr>
+                        <tr class="order_info">
+                            <?php echo "<td>".$row['product_id ']."</td>" ?>
+                            <?php echo "<td>".$row['product_descrip']."</td>" ?>
+                            <?php echo "<td>".$row['cut_qty']."</td>" ?>
+                            <?php echo "<td>".$row['product_qty']."</td>" ?>
+                            <?php echo "<td>  </td>" ?>
+                            <?php echo "<td>  </td>" ?>
+                            <?php } ?>
+                        </tr>
+                </table>
+                </div>
 </body>
