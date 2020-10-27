@@ -47,8 +47,8 @@ $re2 = mysqli_query($conn,$Query);
                 <br><br>
             <table>
             
-                <td><h3><a href="po.php">Back To Purchase Requisition <span class="fas fa-arrow-left"></a></h3></td> 
-                <?php echo "<td><h3><a href=\"podetail_create.php?id=".$po_id."\">Add Product " ?> 
+                <td><h3><a href="pr.php">Back To Purchase Requisition <span class="fas fa-arrow-left"></a></h3></td> 
+                <?php echo "<td><h3><a href=\"prdetail_create.php?id=".$po_id."\">Add Product " ?> 
                 <span class="fas fa-file-medical"></a></h3></td>
             </table>
              </div>
