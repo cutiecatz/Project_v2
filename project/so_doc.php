@@ -3,13 +3,15 @@ require("server.php");
 $sale_id = $_GET['id'];
 $userQuery = "SELECT * FROM `sale order` 
                         JOIN quotation USING (quo_id)
+                        JOIN inquiry USING (inquiry_id)
+                        JOIN customer USING (customer_id)
                         JOIN employee  USING (employee_id)
                         JOIN company  USING (company_id)
                        WHERE sale_id = $sale_id";
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM `sale detail` p join product d USING(product_id) where sale_id = '$sale_id'";
 $result2 = mysqli_query($conn,$userQuery2);
-$Query = "SELECT SUM(product_net) AS Total, FORMAT(SUM((product_net)*0.07),2) as TAX FROM `sale detail` WHERE sale_id = '$sale_id'";
+$Query = "SELECT SUM(net) AS Total, FORMAT(SUM((net)*0.07),2) as TAX FROM `sale detail` WHERE sale_id = '$sale_id'";
 $result3 = mysqli_query($conn,$Query);
 ?>
 <!doctype html>
@@ -61,7 +63,7 @@ $result3 = mysqli_query($conn,$Query);
                             <th>Product Name</th>
                             <th>Quantity</th>
                             <th>Discount</th>
-                            <th>Unit Price</th>
+                            <th>Unit/Price</th>
                             <th>Net Price</th>
                         </tr>
                         <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
@@ -70,9 +72,9 @@ $result3 = mysqli_query($conn,$Query);
                                 <?php echo "<td>".$row['product_descrip']."</td>" ?>
                                 <?php echo "<td>".$row['product_descrip']."</td>" ?>
                                 <?php echo "<td>".$row['qty']."</td>" ?>
-                                <?php echo "<td>".$row['product_price']."</td>" ?>
-                                <?php echo "<td>".$row['product_dis']."</td>" ?>
-                                <?php echo "<td>".$row['product_net']."</td>" ?>
+                                <?php echo "<td>".$row['discount']."</td>" ?>
+                                <?php echo "<td>".$row['price']."</td>" ?>
+                                <?php echo "<td>".$row['net']."</td>" ?>
                             </tr>
                         <?php } ?>
                         <?php while ($row = mysqli_fetch_assoc($result3)) { ?>

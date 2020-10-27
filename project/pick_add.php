@@ -1,6 +1,6 @@
 <?php
 require_once "server.php";
-$id = $_POST['id'];
+$id = $_POST['pick_id'];
 $sid = $_POST['sid'];
 $store = $_POST['st'];
 $pd = $_POST['pick_date'];

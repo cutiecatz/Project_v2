@@ -3,7 +3,7 @@ require "navbar.php";
 require_once "server.php";
 
 $rfq_id = $_GET['id'];
-$userQuery = "SELECT * FROM `inquiry`";
+$userQuery = "SELECT * FROM `inquiry` WHERE inquiry_id = '$rfq_id'";
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM product ";
 $result2 = mysqli_query($conn,$userQuery2);
