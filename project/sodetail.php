@@ -58,6 +58,7 @@ $result3 = mysqli_query($conn,$userQuery2);
                     <?php while ($row = mysqli_fetch_assoc($result3)){ ?>
                         <td><h3>Sale Person: <?php echo "".$row['employee_name']."" ?></h3></td>
                         <td><h3>Job: <?php echo "".$row['employee_position']."" ?></h3></td>
+                        <td><h3>Payment Term: <?php echo "".$row['payment_term']."" ?></h3></td>
                         <td><h3>Shipping Method: <?php echo "".$row['ship_method']."" ?></h3></td>
                         <td><h3>Delivery Date: <?php echo "".$row['delivery_date']."" ?></h3></td>
                         <td><h3>Due Date: <?php echo "".$row['sale_due_date']."" ?></h3></td>

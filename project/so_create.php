@@ -51,6 +51,12 @@ $result4 = mysqli_query($conn,$userQuery4);
         <option value="Sea">Sea</option>
     </select></td>
 
+    <label for="ship">Payment-Term </label>
+    <td><select name="pay" id="pay">
+        <option value="Credit">Credit</option>
+        <option value="Debit">Debit</option>
+    </select></td>
+
     <td><input type="submit" value="submit"/></td>
     <td><input type="reset" value="reset"/></td>
 

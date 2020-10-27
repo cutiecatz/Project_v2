@@ -6,9 +6,10 @@ $em = $_POST['em'];
 $d = $_POST['due_date'];
 $s = $_POST['ship'];
 $dev = $_POST['dev_date'];
+$pay = $_POST['pay'];
 $id2 = 300000+$id;
-$userQuery = "INSERT INTO `sale order`(`sale_id`, `quo_id`, `employee_id`, `sale_due_date`, `ship_method`, `delivery_date`) 
-      VALUES ('$id2','$quo','$em','$d','$s','$dev')";
+$userQuery = "INSERT INTO `sale order`(`sale_id`, `quo_id`, `employee_id`, `sale_due_date`, `ship_method`, `delivery_date`,payment_term) 
+      VALUES ('$id2','$quo','$em','$d','$s','$dev','$pay')";
 $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {
