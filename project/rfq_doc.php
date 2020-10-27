@@ -56,7 +56,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                                 <?php echo "<td>".$row['qty']."</td>" ?>
                             </tr>
                         <?php } ?>
-                </table> 
+                </table>
                 </div>
         </div>
     </div>
