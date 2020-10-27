@@ -1,7 +1,6 @@
 <?php
 
 require_once "server.php";
-require "navbar.php";
 $com_id = $_GET['id'];
 $userQuery = "SELECT * from company where company_id = '$com_id'";
 $result = mysqli_query($conn,$userQuery);
@@ -19,13 +18,14 @@ else
         <html>
                 <head>
                     <meta charset="utf-8">
-                    <link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+                    <link rel="stylesheet" type="text/css" href="../project/css/style_v2.css">
                     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 </head>
                 <body>
+                <div class="container">
                  <form name="form1" method="post" action="company_update_submit.php?id=<?php echo $com_id;?>">   
-                  <table width="416" border="0">
+                  <table >
                       <tr>
                           <td>Company Code</td>
                           <td><textarea rows="1" cols="100" type="text" name="code"><?php echo $row['company_code'];?></textarea></td>
@@ -37,13 +37,13 @@ else
                       </tr>
                       <tr>
                           <td>Company Address</td>
-                          <td><textarea rows="2" cols="50" type="text" name="comadd"><?php echo $row['company_address'];?></textarea></td>
+                          <td><textarea rows="2" cols="30" type="text" name="comadd"><?php echo $row['company_address'];?></textarea></td>
                           <td> City</td>
                           <td><textarea rows="2" cols="20" type="text" name="com_city"><?php echo $row['company_city'];?></textarea></td>
                           <td>Zipcode</td>
-                          <td><textarea rows="2" cols="7" type="text" name="com_post"><?php echo $row['company_post'];?></textarea></td>
+                          <td><textarea rows="2" cols="20" type="text" name="com_post"><?php echo $row['company_post'];?></textarea></td>
                           <td>Country</td>
-                          <td><textarea rows="2" cols="7" type="text" name="com_coun"><?php echo $row['company_country'];?></textarea></td>
+                          <td><textarea rows="2" cols="20" type="text" name="com_coun"><?php echo $row['company_country'];?></textarea></td>
                       </tr>
                       <tr>
                           <td>Telephone</td>
