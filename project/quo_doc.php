@@ -44,7 +44,7 @@ $result3 = mysqli_query($conn,$Query);
                             </ul>
                         </div>
                     </div>
-                        <!--------------- ------------->
+                    <!--------------- ------------->
                     <div class="customer">
                         <div>
                             <h2><p class="Address-Heading_to">To : </p></h2>
@@ -59,31 +59,31 @@ $result3 = mysqli_query($conn,$Query);
                         </div>
                     </div>
                 </div>
-                        <!--------------- ------------->
-                    <div class="inv-body">
-                        <table class="product">
-                            <thead>
-                                <th>Product#</th>
-                                <th>Product Name</th>
-                                <th>Quantity</th>
-                                <th>Unit Price</th>
-                                <th>Discount</th>
-                                <th>Net Price</th>
-                            </thead>
-                            <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
-                            <tbody>
-                                <tr class="item">
-                                    <?php echo "<td>".$row['product_id']."</td>" ?>
-                                    <?php echo "<td>".$row['product_descrip']."</td>" ?>
-                                    <?php echo "<td>".$row['qty']."</td>" ?>
-                                    <?php echo "<td>".$row['product_price']."</td>" ?>
-                                    <?php echo "<td>".$row['product_dis']."</td>" ?>
-                                    <?php echo "<td>".$row['product_net']."</td>" ?>
-                                </tr>
+                <!--------------- ------------->
+                <div class="inv-body">
+                    <table class="product">
+                        <thead>
+                            <th>Product#</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Discount</th>
+                            <th>Net Price</th>
+                        </thead>
+                        <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
+                        <tbody>
+                            <tr class="item">
+                                <?php echo "<td>".$row['product_id']."</td>" ?>
+                                <?php echo "<td>".$row['product_descrip']."</td>" ?>
+                                <?php echo "<td>".$row['qty']."</td>" ?>
+                                <?php echo "<td>".$row['product_price']."</td>" ?>
+                                <?php echo "<td>".$row['product_dis']."</td>" ?>
+                                <?php echo "<td>".$row['product_net']."</td>" ?>
                                 <?php } ?>
-                            </tbody>
-                        </table> 
-                    </div>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </div>
                     <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
                     <div class="inv-footer">
                         <div><!-- required --></div>
@@ -105,4 +105,8 @@ $result3 = mysqli_query($conn,$Query);
                         <?php } ?>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>                    
+    </div>
 </body>
