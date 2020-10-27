@@ -32,7 +32,7 @@ $i=1;
     <td>Product name</td>
     <td><select name="name" id="name">
     <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
-        <option value="<?php echo "$i"; ?>"> <?php echo $row['product_name']; $i+=$i?> </option>
+        <option value="<?php echo $row['product_id']; ?>"> <?php echo $row['product_name'];?> </option>
      <?php  } ?>
     </td>
 </tr>
