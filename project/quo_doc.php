@@ -25,14 +25,16 @@ $result3 = mysqli_query($conn,$Query);
     <div class="container">
         <div class="document">
     
-            <div>
+            <div style = "justify-content: space-around">
                 <h1>Quotation</h1>
-            </div>
-            </div>
-                <div class="inv-header">
+                <div>
                     Quotation#: <?php echo $quo_id;?> <br>
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                     Quotation DATE :  <?php echo "".$row['quo_date']."" ?>
+                </div>
+            </div>
+            </div>
+                <div class="inv-header">
                     <!--------------- ------------->
                     <div class="box_left">
                         <div>
