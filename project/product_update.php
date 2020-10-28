@@ -1,7 +1,5 @@
 <?php
-
 require_once "server.php";
-require "navbar.php";
 $cus_id = $_GET['id'];
 $userQuery = "SELECT * from product where product_id = '$cus_id'";
 $result = mysqli_query($conn,$userQuery);
@@ -11,7 +9,6 @@ if(!$result)
 }
 else
 {
-    echo "Edit Product";
     
     $row=mysqli_num_rows($result);
     while($row = mysqli_fetch_assoc($result)) :?>
@@ -19,35 +16,28 @@ else
         <html>
                 <head>
                     <meta charset="utf-8">
-                    <link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+                    <link rel="stylesheet" type="text/css" href="../project/css/style_v2.css">
                     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 </head>
                 <body>
-                 <form name="form1" method="post" action="product_update_submit.php?id=<?php echo $cus_id;?>">   
-                  <table width="416" border="0">
-                      <tr>
-                          <td>Product Name</td>
-                          <td><textarea rows="5" cols="100" type="text" name="name"><?php echo $row['product_name'];?></textarea></td>
+                <h1 class="head">Edit Product</h1>
+                <div class="container">
+                    <form method="post" action="product_update_submit.php?id=<?php echo $cus_id;?>">   
 
-                      </tr>
-                      <tr>
-                          <td>Description</td>
-                          <td><textarea rows="5" cols="100" type="text" name="desc"><?php echo $row['product_descrip'];?></textarea></td>
-                      </tr>
-                      <tr>
-                          <td>Weight</td>
-                          <td><textarea rows="5" cols="100" type="text" name="weight"><?php echo $row['product_weight'];?></textarea></td>
+                            <label for="pname">Product Name</label>
+                            <input type="text" name="name" placeholder="your product name...">
 
-                      </tr>
-                 
-                      <tr>
-                          <td ><input type="submit" name="button" value="Submit"></td>
-                          
-                          <td><input type="reset" name="button2" value="Reset"></td>
-                      </tr>
-             </table> 
-                 </form> 
+                            <label for="pname">Description</label>
+                            <textarea id="des" name="des" placeholder="your description..." style="height:100px"></textarea>
+
+                            <label for="pname">Weight</label>
+                            <input type="text" name="weight" placeholder="your weight...">
+
+                            <td><input type="submit" name="button" value="Submit"></td>
+                            <td><input type="reset" name="button2" value="Reset"></td>
+                    </form>
+                </div>
                 </body>
         <?PHP endwhile ?>
 

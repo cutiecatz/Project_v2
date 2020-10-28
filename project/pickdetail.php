@@ -37,7 +37,8 @@ $result = mysqli_query($conn,$userQuery);
                 </table> 
                 <table>
                    <td><h3><a href="pick.php">Back To PICKING <span class="fas fa-arrow-left"></a></h3></td> 
-                   <?php echo "<td><h3><a href=\"pick_cutstock.php?id=".$pick."\">POST</a></h3></td>" ?>
+                   <?php echo "<td><h3><a href=\"pick_cutstock.php?id=".$pick."\">POST" ?>
+                   <span class="fas fa-plus"></a></h3></td>
                     </table> 
                 </form> 
                 </body>

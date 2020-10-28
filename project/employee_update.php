@@ -1,7 +1,6 @@
 <?php
 
 require_once "server.php";
-require "navbar.php";
 $cus_id = $_GET['id'];
 $userQuery = "SELECT * from employee where employee_id = '$cus_id'";
 $result = mysqli_query($conn,$userQuery);
@@ -18,12 +17,13 @@ else
         <html>
                 <head>
                     <meta charset="utf-8">
-                    <link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+                    <link rel="stylesheet" type="text/css" href="../project/css/style_v2.css">
                     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 </head>
                 <body>
-                 <form name="form1" method="post" action="employee_update_submit.php?id=<?php echo $cus_id;?>">   
+                <h1 class="head">Edit Employee</h1>
+                 <form method="post" action="employee_update_submit.php?id=<?php echo $cus_id;?>">   
                   <table width="416" border="0">
                       <tr>
                           <td>Employee Name</td>

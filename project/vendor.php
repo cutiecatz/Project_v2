@@ -18,13 +18,13 @@ $result = mysqli_query($conn,$userQuery);
       <div class="PO">
         <table style="width:90%">
       <tr>
-            <td> Vendor ID</td>
-            <td> Name</td>
-            <td> Address</td>
-            <td> Telephone</td>
-            <td> E-mail</td>
-            <td> Edit </td>
-            <td> Delete </td>
+            <th> Vendor ID</th>
+            <th> Name</th>
+            <th> Address</th>
+            <th> Telephone</th>
+            <th> E-mail</th>
+            <th> Edit </th>
+            <th> Delete </th>
             
       </tr>
       <div class="company view">

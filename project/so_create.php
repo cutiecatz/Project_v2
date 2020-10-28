@@ -34,9 +34,6 @@ $result4 = mysqli_query($conn,$userQuery4);
     <?php while ($row = mysqli_fetch_assoc($result2)) { ?>
         <option value="<?php echo $row['employee_id']; ?>"> <?php echo $row['employee_name'];?> </option>
      <?php } ?> </select>
-    
-    <label for="date">Date</td> <br><br>
-    <th>CURRENT DATE</th>
     <br><br>
     <label for="dd">Due-Date </label><br><br>
     <input type="date" name="due_date">
