@@ -32,7 +32,7 @@ $result3 = mysqli_query($conn,$Query);
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                     Quotation DATE :  <?php echo "".$row['quo_date']."" ?><br>
                     <!--------------- ------------->
-                    <div class="company">
+                    <div class="box_left">
                         <div>
                             <h2><p class="Address-Heading_from">From : </p></h2>
                             <ul>
@@ -45,7 +45,7 @@ $result3 = mysqli_query($conn,$Query);
                         </div>
                     </div>
                     <!--------------- ------------->
-                    <div class="customer">
+                    <div class="box_right">
                         <div>
                             <h2><p class="Address-Heading_to">To : </p></h2>
                             <ul>

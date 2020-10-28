@@ -38,7 +38,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                         Picking DATE :  <?php echo "".$row['pick_date']."" ?><br>
                     <!--------------- ------------->
-                    <div class="company_to">
+                    <div class="box_left">
                         <div>
                             <h2><p class="Address-Heading_from">From : </p></h2>
                             <ul>
@@ -51,7 +51,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                         </div>
                     </div>
                     <!--------------- ------------->
-                    <div class="customer_from">
+                    <div class="box_right">
                         <div>
                             <h2><p class="Address-Heading_from">To : </p></h2>
                             <ul>

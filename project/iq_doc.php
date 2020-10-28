@@ -25,12 +25,12 @@ $result2 = mysqli_query($conn,$userQuery2);
                 </div>
                 <!--------------- ------------->
                 <div class = "inv-header">
-                    Inquiry#: <?php echo $inquiry_id;?>
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                         
-                    <div class="customer">
+                    <div class="box_left">
                         <div>
-                            <h2 style="color : #809d87"><p class="Address-Heading"> <br><br> From : </p></h2>
+                            Inquiry#: <?php echo $inquiry_id;?>
+                            <h2 style="color : #809d87"><p class="Address-Heading"> From : </p></h2>
                             <ul>
                                 <li>Customer Name:  <?php echo "".$row['customer_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['customer_bill']."" ?>
