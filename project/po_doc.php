@@ -106,6 +106,6 @@ $result3 = mysqli_query($conn,$Query);
             </table>
             <?php } ?>
         </div>
-    </div>        
+    </div>
 </body>
 </html>

@@ -23,7 +23,6 @@ $result = mysqli_query($conn,$userQuery);
             <th> DELIVERED BY </th>
             <th> GOODS RECEIPT DATE </th>
             <th> View</th>
-            <th> Show Document</th>
             <th> Delete</th>
       </tr>
       <div class="POdetail">
@@ -36,8 +35,6 @@ $result = mysqli_query($conn,$userQuery);
             <?php echo "<td>".$row['gr_date']."</td>" ?>
             <?php echo "<td><a href=\"grdetail.php?id=".$row['gr_id']."\"> " ?> 
             <span class="fas fa-edit"></a></td>
-            <?php echo "<td><a href=\"gr_doc.php?id=".$row['gr_id']."\"> " ?> 
-              <span class="fas fa-file"></a></td>
             <?php echo "<td><a href=\"gr_delete.php?id=".$row['gr_id']."\"> "?>
             <span class="fas fa-trash-alt"></a></td>
             </tr>
