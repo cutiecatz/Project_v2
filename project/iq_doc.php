@@ -21,7 +21,7 @@ $result2 = mysqli_query($conn,$userQuery2);
     <div class="container">
         <div class="document">
                 <div class="inv-title">
-                    <h1>Inquiry</h1>
+                    <h1 style="color : #809d87;">Inquiry</h1>
                 </div>
                 <!--------------- ------------->
                 <div class = "inv-header">
@@ -58,9 +58,9 @@ $result2 = mysqli_query($conn,$userQuery2);
                 <div class="inv-body">
                 <table class="product">
                         <thead>
-                            <th>Product#</th>
-                            <th>Product Name</th>
-                            <th>Quantity</th>
+                            <th style="color : #809d87;">Product#</th>
+                            <th style="color : #809d87;">Product Name</th>
+                            <th style="color : #809d87;">Quantity</th>
                         </thead>
                         <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
                         <tbody>
