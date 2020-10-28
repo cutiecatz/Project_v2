@@ -24,17 +24,19 @@ $result3 = mysqli_query($conn,$Query);
 <body>
     <div class="container">
         <div class="document">
+    
             <div>
-                <h1>Quotation</h1>
+                <h1 style="color : #809d87" >Quotation</h1>
+            </div>
             </div>
                 <div class="inv-header">
-                    Quotation#: <?php echo $quo_id;?><br>
+                    Quotation#: <?php echo $quo_id;?> <br>
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                    Quotation DATE :  <?php echo "".$row['quo_date']."" ?><br>
+                    Quotation DATE :  <?php echo "".$row['quo_date']."" ?>
                     <!--------------- ------------->
                     <div class="box_left">
                         <div>
-                            <h2><p class="Address-Heading_from">From : </p></h2>
+                            <h2 style="color : #809d87"><p class="Address-Heading_from"> <br> From : </p></h2>
                             <ul>
                                 <li>Company:  <?php echo "".$row['company_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['company_address']."" ?>
@@ -47,7 +49,7 @@ $result3 = mysqli_query($conn,$Query);
                     <!--------------- ------------->
                     <div class="box_right">
                         <div>
-                            <h2><p class="Address-Heading_to">To : </p></h2>
+                            <h2 style="color : #809d87"><p class="Address-Heading_to"> <br> To : </p></h2>
                             <ul>
                                 <li>Customer:  <?php echo "".$row['customer_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['customer_bill']."" ?>
@@ -63,12 +65,12 @@ $result3 = mysqli_query($conn,$Query);
                 <div class="inv-body">
                     <table class="product">
                         <thead>
-                            <th>Product#</th>
-                            <th>Product Name</th>
-                            <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Discount</th>
-                            <th>Net Price</th>
+                            <th style="color : #809d87" >Product#</th>
+                            <th style="color : #809d87" >Product Name</th>
+                            <th style="color : #809d87" >Quantity</th>
+                            <th style="color : #809d87" >Unit Price</th>
+                            <th style="color : #809d87" >Discount</th>
+                            <th style="color : #809d87" >Net Price</th>
                         </thead>
                         <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
                         <tbody>
@@ -90,15 +92,15 @@ $result3 = mysqli_query($conn,$Query);
                         <div>
                             <table>
                                 <tr>
-                                    <th>Sub Total</th> 
+                                    <th style="color : #809d87" >Sub Total</th> 
                                     <td><?php $t = $row['Total']; ?><?php  echo "".$row['Total']."";?></td>
                                 </tr>
                                 <tr>
-                                    <th>Tax</th> 
+                                    <th style="color : #809d87" >Tax</th> 
                                     <td>7% <?php $tax = $row['TAX']; ?></td>                                 
                                 </tr>
                                 <tr>
-                                    <th>Total</th>
+                                    <th style="color : #809d87" >Total</th>
                                     <td><?php echo $t+$tax; ?></td>
                                 </tr>
                             </table>
