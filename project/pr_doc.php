@@ -68,7 +68,7 @@ $result3 = mysqli_query($conn,$Query);
                     </table> 
                 </div>
                     <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
-                    <div>
+                    <div class ="inv-footer">
                     <div><!-- required --></div>
                         <table>
                             <tr> 
