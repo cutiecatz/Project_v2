@@ -56,7 +56,7 @@ else
                       <tr>
                           <td ><input type="submit" name="button" value="Submit"></td>
                           
-                          <td><input type="reset" name="button2" value="Cancel"></td>
+                          <td><input type="reset" name="button2" value="Reset"></td>
                       </tr>
              </table> 
                  </form> 

@@ -38,11 +38,10 @@ $i=1;
 </tr>
 <tr>
     <td>Quantity</td>
-    <td><input type="number" name="qty" ></td>
+    <td><input type="number" name="qty"></td>
 </tr>
 <tr>
     <td><input type="submit" value="submit"/></td>
-    
     <td><input type="reset" value="reset"/></td>
 </tr>
 </table>
