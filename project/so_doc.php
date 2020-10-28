@@ -32,13 +32,13 @@ $result3 = mysqli_query($conn,$Query);
             </div>
                 <div class="inv-header">
                     Sale Order#: <?php echo $sale_id;?><br>
-                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                    <?php while ($row = mysqli_fetch_assoc($result)) { ?> 
                     Sale Order DATE :  <?php echo "".$row['sale_date']."" ?><br>
                     Sale Order Due DATE :  <?php echo "".$row['sale_due_date']."" ?><br>
                     <!--------------- ------------->
                     <div class="box_left">
                         <div>
-                            <h2><p class="Address-Heading_from">From : </p></h2>
+                            <h2><p class="Address-Heading_from"> <br><br><br> From : </p></h2>
                             <ul>
                                 <li>Company Name:  <?php echo "".$row['company_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['company_address']."" ?>
@@ -51,7 +51,7 @@ $result3 = mysqli_query($conn,$Query);
                     <!--------------- ------------->
                     <div class="box_right">
                         <div>
-                            <h2><p class="Address-Heading_to">To : </p></h2>
+                            <h2><p class="Address-Heading_to"> <br><br><br> To : </p></h2>
                             <ul>
                                 <li>Customer Name:  <?php echo "".$row['customer_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['customer_bill']."" ?>
