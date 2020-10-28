@@ -1,5 +1,4 @@
 <?php
-require "navbar.php";
 require_once "server.php";
 
 $rfq_id = $_GET['id'];
@@ -14,12 +13,12 @@ $result3 = mysqli_query($conn,$userQuery3);
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../project/css/msdee.css">
+    <link rel="stylesheet" type="text/css" href="../project/css/style_v2.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<h2>Add Quotation:<?php echo $rfq_id ?></h2>
+<h1 class="head">Add Quotation:<?php echo $rfq_id ?></h1>
 <form action="quodetail_add.php" method="POST" style="border:1px solid gray;">
 <table>
 <tr>

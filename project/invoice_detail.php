@@ -20,7 +20,7 @@ $re2 = mysqli_query($conn,$Query);
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
                 <body>
-                    <H1>Invoice No : Invoice# <?php echo $invoice_id?></H1>
+                    <H1> Invoice# <?php echo $invoice_id?></H1>
 
                 <div class="Invoice">
                   <table width="500" border="0">
@@ -52,7 +52,8 @@ $re2 = mysqli_query($conn,$Query);
             <table>
                 <td><H3>Total Price: <?php while ($row = mysqli_fetch_assoc($re2)) echo $row['Total'] ?></H3></td>
                 <td><h3><a href="invoice.php">Back To Invoice <span class="fas fa-arrow-left"></a></h3></td> 
-                <?php echo "<td><h3><a href=\"invoice_detail_add.php?id=".$invoice_id."\">POST</a></h3></td>" ?>
+                <?php echo "<td><h3><a href=\"invoice_detail_add.php?id=".$invoice_id."\">POST" ?>
+                <span class="fas fa-plus"></a></h3></td>
                 
             </table>
              </div>

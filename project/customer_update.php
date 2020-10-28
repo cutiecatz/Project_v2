@@ -10,7 +10,6 @@ if(!$result)
 }
 else
 {
-    echo "Update Customer<br><br>";
     
     $row=mysqli_num_rows($result);
     while($row = mysqli_fetch_assoc($result)) :?>
@@ -23,8 +22,9 @@ else
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 </head>
                 <body>
+                <h1 class="head">Edit Customer</h1>
                 <div class="container">
-                 <form name="form1" method="post" action="customer_update_submit.php?id=<?php echo $cus_id;?>">   
+                 <form method="post" action="customer_update_submit.php?id=<?php echo $cus_id;?>">   
                   <table >
                       <tr>
                           <td>Customer Name</td>
