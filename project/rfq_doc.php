@@ -15,49 +15,58 @@ $result2 = mysqli_query($conn,$userQuery2);
 <!doctype html>
 <html>
 <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../project/css/doc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"rel="stylesheet"/>
+
 </head>
 <body>
-    <div class="middle">
+    <div class="container">
         <div class="document">
-            <header>
-                    <div class="header">
-                        <h1>RFQ</h1>
-                        RFQ#: <?php echo $rfq_id;?><br>
-                    </div>
-                </header>
-                <div class="date">
+            <div>
+                <h1>Request For Quotation</h1>
+            </div>
+            <div class="inv-header">
+                RFQ#: <?php echo $rfq_id;?><br>
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                    RFQ DATE :  <?php echo "".$row['rfq_date']."" ?><br>
-                    </div>
-                    <!--------------- ------------->
-                <div class="company">
-                        <div>
-                            <p class="Address-Heading_from">From : </p>
-                            Company Name:  <?php echo "".$row['company_name']."" ?><br>
-                            Address: <?php echo "".$row['company_address']."" ?><br>
-                            <?php echo "".$row['company_city']." ".$row['company_post']." ".$row['company_country']."" ?><br>
-                            E-mail: <?php echo "".$row['company_email']."" ?><br>
-                            Phone : <?php echo "".$row['company_phone']."" ?><br>
+                RFQ DATE :  <?php echo "".$row['rfq_date']."" ?><br>
+                <!--------------- ------------->
+                <div class="box_left">
+                    <div>
+                        <h2><p class="Address-Heading_from">From : </p></h2>
+                        <ul>
+
+                            <li>Company Name:  <?php echo "".$row['company_name']."" ?></li> 
+                            <li>Address: <?php echo "".$row['company_address']."" ?>
+                            <?php echo "".$row['company_city']." ".$row['company_post']." ".$row['company_country']."" ?></li> 
+                            <li>E-mail: <?php echo "".$row['company_email']."" ?></li> 
+                            <li>Phone : <?php echo "".$row['company_phone']."" ?></li> 
                             <?php }?>
-                        </div>
+                        </ul>
+                    </div>
                 </div>
-                    <!--------------- ------------->
-                <div class="content">
+            </div>
+            <!--------------- ------------->
+            <div class="inv-body">
                 <table class="product">
-                        <tr>
+                        <thead>
                             <th>Product#</th>
                             <th>Product Name</th>
                             <th>Quantity</th>
-                        </tr>
+                        </thead>
                         <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
+                        <tbody>
                             <tr class="item">
                                 <?php echo "<td>".$row['product_id']."</td>" ?>
                                 <?php echo "<td>".$row['product_descrip']."</td>" ?>
                                 <?php echo "<td>".$row['qty']."</td>" ?>
                             </tr>
+                        </tbody>
                         <?php } ?>
                 </table>
-                </div>
+            </div>
         </div>
     </div>
 </body>

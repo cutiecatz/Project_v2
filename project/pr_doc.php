@@ -55,8 +55,7 @@ $result3 = mysqli_query($conn,$Query);
                             <th>Price</th>
                         </thead>
                         <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
-                        <tbody>
-                            
+                        <tbody>     
                             <tr class="item">
                                 <?php echo "<td>".$row['product_id']."</td>" ?>
                                 <?php echo "<td>".$row['product_descrip']."</td>" ?>
