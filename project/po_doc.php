@@ -17,212 +17,95 @@ $result3 = mysqli_query($conn,$Query);
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Purchase Order Document</title>
-    
-    <style>
-    .invoice-box {
-        max-width: 800px;
-        margin: auto;
-        padding: 30px;
-        border: 1px solid #eee;
-        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-        font-size: 16px;
-        line-height: 24px;
-        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-        color: #555;
-    }
-    
-    .invoice-box table {
-        width: 100%;
-        line-height: inherit;
-        text-align: left;
-    }
-    
-    .invoice-box table td {
-        padding: 5px;
-        vertical-align: top;
-    }
-    
-    .invoice-box table tr td:nth-child(6) {
-        text-align: right;
-    }
-    
-    .invoice-box table tr.top table td {
-        padding-bottom: 20px;
-    }
-    
-    .invoice-box table tr.top table td.title {
-        font-size: 45px;
-        line-height: 45px;
-        color: #333;
-    }
-    
-    .invoice-box table tr.information table td {
-        padding-bottom: 40px;
-    }
-    
-    .invoice-box table tr.heading td {
-        background: #eee;
-        border-bottom: 1px solid #ddd;
-        font-weight: bold;
-    }
-    .invoice-box table tr td H3.vendor {
-        background: #eee;
-        border-bottom: 1px solid #ddd;
-        font-weight: bold;
-    }
-    
-    .invoice-box table tr.details td {
-        padding-bottom: 20px;
-    }
-    
-    .invoice-box table tr.item td{
-        border-bottom: 1px solid #eee;
-    }
-    
-    .invoice-box table tr.item.last td {
-        border-bottom: none;
-    }
-    
-    .invoice-box table tr.total td:nth-child(6) {
-        border-top: 2px solid #eee;
-        font-weight: bold;
-    }
-    
-    @media only screen and (max-width: 1800px) {
-        .invoice-box table tr.top table td {
-            width: 100%;
-            display: block;
-            text-align: center;
-        }
-        
-        .invoice-box table tr.information table td {
-            width: 100%;
-            display: block;
-            text-align: center;
-        }
-    }
-    
-    /** RTL **/
-    .rtl {
-        direction: rtl;
-        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-    }
-    
-    .rtl table {
-        text-align: right;
-    }
-    
-    .rtl table tr td:nth-child(6) {
-        text-align: left;
-    }
-    
-    </style>
-</head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../project/css/doc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"rel="stylesheet"/>
 
+</head>
 <body>
-    <div class="invoice-box">
-        <table cellpadding="0" cellspacing="0">
-            <tr class="top">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td class="title">
-                                <img src="https://dcassetcdn.com/design_img/2854917/520386/520386_15741944_2854917_ae76a10b_image.jpg" style="width:75%; max-width:300px;">
-                            </td>
-                            
-                            <td>
-                                <h1>Purchase Order</h1>
-                                Purchase Order #: <?php echo $po_id;?><br>
-                                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                                DATE :  <?php echo "".$row['po_date']."" ?><br>
-                        
-                                
-                            </td>
+    <div class="container">
+        <div class="document">
+            <div style = "justify-content: space-around">
+                <h1>Purchase Order</h1>
+                <div>
+                    Purchase Order #: <?php echo $po_id;?><br>
+                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                    DATE :  <?php echo "".$row['po_date']."" ?><br>
+                </div>
+            </div>
+            <div class="inv-header">
+                <!--------------- ------------->
+                <div class="box_left">
+                    <div>
+                        <H2><p class="Address-Heading_from">From :</p></H2>
+                        <ul>
+                            <li>Vendor Name:  <?php echo "".$row['vendor_name']."" ?></li>
+                            <li>Address: <?php echo "".$row['vendor_address']."" ?>
+                            <?php echo "".$row['vendor_city']." ".$row['vendor_postcode']."" ?></li>
+                            <li>E-mail: <?php echo "".$row['vendor_email']."" ?></li>
+                            <li>Phone : <?php echo "".$row['vendor_phone']."" ?></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--------------- ------------->                   
+                <div class="box_right">
+                    <div>
+                        <h2><p class="Address-Heading_from">SHIP TO</p></h2>
+                        <ul>
+                            <li>Vendor Name:  <?php echo "".$row['company_name']."" ?></li>
+                            <li>Address: <?php echo "".$row['company_address']."" ?>
+                            <?php echo "".$row['company_city']." ".$row['company_post']."" ?></li>
+                            <li>E-mail: <?php echo "".$row['company_email']."" ?></li>
+                            <li>Phone : <?php echo "".$row['company_phone']."" ?></li>
+                        </ul>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>  
+            <!--------------- ------------->
+            <div class="inv-body">
+                <table class="product">
+                    <thead>
+                        <th> Item</th>
+                        <th> Product Description</th>
+                        <th> Qty</th>
+                        <th> Unit Price</th>
+                        <th> Total</th>     
+                    </thead>
+                    <?php while ($row = mysqli_fetch_assoc($result2)) { ?>    
+                    <tbody>
+                        <tr class="item">
+                            <?php echo "<td>".$row['product_name']."</td>" ?>
+                            <?php echo "<td>".$row['product_descrip']."</td>" ?>
+                            <?php echo "<td>".$row['qty']."</td>" ?>
+                            <?php echo "<td>".$row['product_price']."</td>" ?>
+                            <?php echo "<td>".$row['product_net']."</td>" ?>                     
                         </tr>
-                    </table>
-                </td>
-            </tr>
-            
-            <tr class="information">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td>
-                               <H3 class="vendor">Vendor</H3>
-                               Vendor Name:  <?php echo "".$row['vendor_name']."" ?><br>
-                               Address: <?php echo "".$row['vendor_address']."" ?><br>
-                               <?php echo "".$row['vendor_city']." ".$row['vendor_postcode']."" ?><br>
-                               E-mail: <?php echo "".$row['vendor_email']."" ?><br>
-                               Phone : <?php echo "".$row['vendor_phone']."" ?><br>
-                                
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="ship">
-                                <h3 class="vendor">SHIP TO</h3>
-                                Vendor Name:  <?php echo "".$row['company_name']."" ?><br>
-                               Address: <?php echo "".$row['company_address']."" ?><br>
-                               <?php echo "".$row['company_city']." ".$row['company_post']."" ?><br>
-                               E-mail: <?php echo "".$row['company_email']."" ?><br>
-                               Phone : <?php echo "".$row['company_phone']."" ?><br>
-                               <?php } ?>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            
-            
-            <tr class="heading">
-                <td> Item</td>
-                <td> Product Description</td>
-                <td> Qty</td>
-                <td> Unit Price</td>
-                
-                <td> Total</td>     
-            </tr>
-            <?php while ($row = mysqli_fetch_assoc($result2)) { ?>    
-                <tr class="item">
-                 
-                        <?php echo "<td>".$row['product_name']."</td>" ?>
-                        <?php echo "<td>".$row['product_descrip']."</td>" ?>
-                        <?php echo "<td>".$row['qty']."</td>" ?>
-                        <?php echo "<td>".$row['product_price']."</td>" ?>
-                    
-                        <?php echo "<td>".$row['product_net']."</td>" ?>                     
-            </tr>
-            <?php } ?>
+                    </tbody>
+                    <?php } ?>
+                </table>
+            </div>
             <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
-            <tr class="total"> 
-                <td></td>
-                <td></td>
-                            <td></td>
-                            <td></td>
-                            
-                <td>Sub Total |<?php $t = $row['Total']; ?><?php  echo "".$row['Total']."";?></td> 
-            </tr>
-            <tr class="total">
-                <td></td>
-                <td></td>
-                            <td></td>
-                            <td></td>
-                            
-            <td>Tax | 7% <?php $tax = $row['TAX']; ?></td> 
-            </tr>
-            <tr class="total">
-                <td></td>
-                <td></td>
-                            <td></td>
-                            <td></td>
-                            
-            <td>Total | <?php echo $t+$tax; ?></td> 
-            </tr>
+            <div class ="inv-footer">
+            <div><!-- required --></div>
+            <table>
+                <tr>
+                    <th>Sub Total</th>
+                    <td><?php $t = $row['Total']; ?><?php  echo "".$row['Total']."";?></td> 
+                </tr>
+                <tr>
+                    <th>Tax</th> 
+                    <td>7% <?php $tax = $row['TAX']; ?></td> 
+                </tr>
+                <tr>
+                    <th>Total</th> 
+                    <td><?php echo $t+$tax; ?></td> 
+                </tr>
+            </table>
             <?php } ?>
-        </table>
-    </div>
+        </div>
+    </div>        
 </body>
 </html>
