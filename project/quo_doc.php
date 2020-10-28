@@ -26,7 +26,7 @@ $result3 = mysqli_query($conn,$Query);
         <div class="document">
     
             <div>
-                <h1 style="color : #809d87" >Quotation</h1>
+                <h1>Quotation</h1>
             </div>
             </div>
                 <div class="inv-header">
@@ -36,7 +36,7 @@ $result3 = mysqli_query($conn,$Query);
                     <!--------------- ------------->
                     <div class="box_left">
                         <div>
-                            <h2 style="color : #809d87"><p class="Address-Heading_from"> <br> From : </p></h2>
+                            <h2><p class="Address-Heading_from"> <br> From : </p></h2>
                             <ul>
                                 <li>Company:  <?php echo "".$row['company_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['company_address']."" ?>
@@ -49,7 +49,7 @@ $result3 = mysqli_query($conn,$Query);
                     <!--------------- ------------->
                     <div class="box_right">
                         <div>
-                            <h2 style="color : #809d87"><p class="Address-Heading_to"> <br> To : </p></h2>
+                            <h2><p class="Address-Heading_to"> <br> To : </p></h2>
                             <ul>
                                 <li>Customer:  <?php echo "".$row['customer_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['customer_bill']."" ?>
@@ -65,12 +65,12 @@ $result3 = mysqli_query($conn,$Query);
                 <div class="inv-body">
                     <table class="product">
                         <thead>
-                            <th style="color : #809d87" >Product#</th>
-                            <th style="color : #809d87" >Product Name</th>
-                            <th style="color : #809d87" >Quantity</th>
-                            <th style="color : #809d87" >Unit Price</th>
-                            <th style="color : #809d87" >Discount</th>
-                            <th style="color : #809d87" >Net Price</th>
+                            <th>Product#</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Discount</th>
+                            <th>Net Price</th>
                         </thead>
                         <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
                         <tbody>
@@ -92,15 +92,15 @@ $result3 = mysqli_query($conn,$Query);
                         <div>
                             <table>
                                 <tr>
-                                    <th style="color : #809d87" >Sub Total</th> 
+                                    <th>Sub Total</th> 
                                     <td><?php $t = $row['Total']; ?><?php  echo "".$row['Total']."";?></td>
                                 </tr>
                                 <tr>
-                                    <th style="color : #809d87" >Tax</th> 
+                                    <th>Tax</th> 
                                     <td>7% <?php $tax = $row['TAX']; ?></td>                                 
                                 </tr>
                                 <tr>
-                                    <th style="color : #809d87" >Total</th>
+                                    <th>Total</th>
                                     <td><?php echo $t+$tax; ?></td>
                                 </tr>
                             </table>
