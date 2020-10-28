@@ -37,78 +37,81 @@ $result3 = mysqli_query($conn,$Query);
                     Invoice DATE :  <?php echo "".$row['sale_date']."" ?><br>
                     <!--------------- ------------->
                     <div class="box_left">
-                            <div>
-                                <p class="Address-Heading_from">From : </p>
-                                Company Name:  <?php echo "".$row['company_name']."" ?><br>
-                                Address: <?php echo "".$row['company_address']."" ?><br>
-                                <?php echo "".$row['company_city']." ".$row['company_post']." ".$row['company_country']."" ?><br>
-                                E-mail: <?php echo "".$row['company_email']."" ?><br>
-                                Phone : <?php echo "".$row['company_phone']."" ?><br>
-                            </div>
+                        <div>
+                            <h2><p class="Address-Heading_from">From : </p></h2>
+                            <ul>
+                                <li>Company Name:  <?php echo "".$row['company_name']."" ?></li>
+                                <li>Address: <?php echo "".$row['company_address']."" ?>
+                                <?php echo "".$row['company_city']." ".$row['company_post']." ".$row['company_country']."" ?></li>
+                                <li>E-mail: <?php echo "".$row['company_email']."" ?></li>
+                                <li>Phone : <?php echo "".$row['company_phone']."" ?></li>
+                            </ul>
+                        </div>
                     </div>
-                        <!--------------- ------------->
-                        <div class="box_right">
-                            <div>
-                                <h2><p class="Address-Heading_to">To : </p></h2>
+                    <!--------------- ------------->
+                    <div class="box_right">
+                        <div>
+                            <h2><p class="Address-Heading_to">To : </p></h2>
+                            <ul>
                                 <li>Customer Name:  <?php echo "".$row['customer_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['customer_bill']."" ?>
                                 <?php echo "".$row['customer_bill_city']." ".$row['customer_bill_zipcode']."" ?></li>
                                 <li>E-mail: <?php echo "".$row['customer_email']."" ?></li>
                                 <li>Phone : <?php echo "".$row['customer_phone']."" ?></li>
                                 <?php }?>
-                            </div>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                    <!--------------- ------------->
-                <div class="content">
-                <table class="product">
-                        <tr>
-                            <th>Product#</th>
-                            <th>Product Name</th>
-                            <th>Quantity</th>
-                            <th>Discount</th>
-                            <th>Unit/Price</th>
-                            <th>Net Price</th>
-                        </tr>
-                        <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
-                            <tr class="item">
-                                <?php echo "<td>".$row['product_id']."</td>" ?>
-                                <?php echo "<td>".$row['product_descrip']."</td>" ?>
-                                <?php echo "<td>".$row['product_descrip']."</td>" ?>
-                                <?php echo "<td>".$row['qty']."</td>" ?>
-                                <?php echo "<td>".$row['discount']."</td>" ?>
-                                <?php echo "<td>".$row['price']."</td>" ?>
-                                <?php echo "<td>".$row['net']."</td>" ?>
-                            </tr>
-                        <?php } ?>
-                        <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
-                            <tr class="total"> 
-                                <td></td>
-                                <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            
-                                <td>Sub Total |<?php $t = $row['Total']; ?><?php  echo "".$row['Total']."";?></td> 
-                            </tr>
-                            <tr class="total">
-                                <td></td>
-                                <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            
-                            <td>Tax | 7% <?php $tax = $row['TAX']; ?></td> 
-                            </tr>
-                            <tr class="total">
-                                <td></td>
-                                <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            
-                            <td>Total | <?php echo $t+$tax; ?></td> 
-                            </tr>
-                        <?php } ?>
+                <!--------------- ------------->
+                <div class="inv-body">
+                    <table class="product">
+                            <thead>
+                                <th>Product#</th>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Discount</th>
+                                <th>Unit/Price</th>
+                                <th>Net Price</th>
+                            </thead>
+                            <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
+                            <tbody>
+                                <tr class="item">
+                                    <?php echo "<td>".$row['product_id']."</td>" ?>
+                                    <?php echo "<td>".$row['product_descrip']."</td>" ?>
+                                    <?php echo "<td>".$row['product_descrip']."</td>" ?>
+                                    <?php echo "<td>".$row['qty']."</td>" ?>
+                                    <?php echo "<td>".$row['discount']."</td>" ?>
+                                    <?php echo "<td>".$row['price']."</td>" ?>
+                                    <?php echo "<td>".$row['net']."</td>" ?>
+                                </tr>
+                            </tbody>
+                            <?php } ?>
                     </table> 
                 </div>
+                    <?php while ($row = mysqli_fetch_assoc($result3)) { ?>
+                    <div class ="inv-footer">
+                    <div><!-- required --></div>
+                    <div>
+                        <table>
+                            <tr> 
+                                <th>Sub Total</th>
+                                <td><?php $t = $row['Total']; ?><?php  echo "".$row['Total']."";?></td> 
+                            </tr>
+                            <tr>
+                                <th>Tax</th> 
+                                <td>7% <?php $tax = $row['TAX']; ?></td> 
+                                
+                            </tr>
+                            <tr>
+                                <th>Total</th>
+                                <td><?php echo $t+$tax; ?></td> 
+                            </tr>
+                        </table>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
