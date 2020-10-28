@@ -11,7 +11,7 @@ if(!$result)
 }
 else
 {
-    echo "Update Customer<br><br>";
+    echo "Edit Product";
     
     $row=mysqli_num_rows($result);
     while($row = mysqli_fetch_assoc($result)) :?>
@@ -44,7 +44,7 @@ else
                       <tr>
                           <td ><input type="submit" name="button" value="Submit"></td>
                           
-                          <td><input type="reset" name="button2" value="Cancel"></td>
+                          <td><input type="reset" name="button2" value="Reset"></td>
                       </tr>
              </table> 
                  </form> 

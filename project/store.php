@@ -2,7 +2,7 @@
 require("server.php");
 require("navbar.php");
 $pr_id = $_GET['id'];
-$userQuery = "SELECT * FROM `plant` join `storage` using (plant_id) where plant_id = '$pr_id'";
+$userQuery = "SELECT * FROM `plant` join `storage` using (plant_id) where storage_id = '$pr_id'";
 $result = mysqli_query($conn,$userQuery);
 ?>
 

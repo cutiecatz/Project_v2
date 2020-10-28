@@ -28,7 +28,7 @@ $result2 = mysqli_query($conn,$userQuery);
      <?php } ?>
     </td>
 </tr>
-<td>Storeage Name</td>
+<td>Storage Name</td>
     <td><input type="text" name="name" placeholder=""/>
     </td>
 
