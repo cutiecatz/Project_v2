@@ -37,7 +37,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                         Picking Document#: <?php echo $pick_id;?><br>
                         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                         Picking DATE :  <?php echo "".$row['pick_date']."" ?><br>
-                        <!--------------- ------------->
+                    <!--------------- ------------->
                     <div class="company_to">
                         <div>
                             <h2><p class="Address-Heading_from">From : </p></h2>
