@@ -97,7 +97,7 @@ $result3 = mysqli_query($conn,$Query);
                 </tr>
                 <tr>
                     <th>Tax</th> 
-                    <td>7% <?php $tax = $row['TAX']; ?></td> 
+                    <td>7% <?php $tax = $row['TAX']; ?></td>
                 </tr>
                 <tr>
                     <th>Total</th> 
