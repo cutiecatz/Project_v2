@@ -30,13 +30,15 @@ $result2 = mysqli_query($conn,$userQuery2);
 <body>
     <div class="container">
         <div class="document">
-            <div>
+            <div style = "justify-content: space-around">
                 <h1>Picking Document</h1>
+                <div>
+                    Picking Document#: <?php echo $pick_id;?><br>
+                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                    Picking DATE :  <?php echo "".$row['pick_date']."" ?><br>
+                </div>
             </div>
                 <div class="inv-header">
-                        Picking Document#: <?php echo $pick_id;?><br>
-                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                        Picking DATE :  <?php echo "".$row['pick_date']."" ?><br>
                     <!--------------- ------------->
                     <div class="box_left">
                         <div>

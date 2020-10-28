@@ -28,13 +28,15 @@ $result3 = mysqli_query($conn,$Query);
 <body>
     <div class="container">
         <div class="document">
-            <div>
+            <div style = "justify-content: space-around">
                 <h1>Invoice</h1>
-            </div>
-                <div class="inv-header">
+                <div>
                     Invoice#: <?php echo $invoice_id;?><br>
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                     Invoice DATE :  <?php echo "".$row['sale_date']."" ?><br>
+                </div>
+            </div>
+                <div class="inv-header">
                     <!--------------- ------------->
                     <div class="box_left">
                         <div>
