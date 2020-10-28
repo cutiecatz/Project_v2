@@ -1,7 +1,7 @@
 <?php
 require_once "server.php";
 $po_id = $_GET['id'];
-$userQuery = "DELETE FROM company WHERE id = '$po_id'";
+$userQuery = "DELETE FROM company WHERE company_id = '$po_id'";
 $result = mysqli_query($conn,$userQuery);
 if(!$result)
 {
