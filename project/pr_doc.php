@@ -23,13 +23,15 @@ $result3 = mysqli_query($conn,$Query);
 <body>
     <div class="container">
         <div class="document">
-            <div>
+            <div style = "justify-content: space-around">
                 <h1>Purchase Requisition</h1>
-            </div>
-                <div class="inv-header">
+                <div>
                     Purchase Requisition#: <?php echo $pr_id;?><br>
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                     Purchase Requisition DATE :  <?php echo "".$row['pr_date']."" ?><br>
+                </div>
+            </div>
+                <div class="inv-header">
                     <!--------------- ------------->
                     <div class="box_left">
                         <div>

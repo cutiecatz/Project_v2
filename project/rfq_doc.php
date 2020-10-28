@@ -25,13 +25,15 @@ $result2 = mysqli_query($conn,$userQuery2);
 <body>
     <div class="container">
         <div class="document">
-            <div>
+            <div style = "justify-content: space-around">
                 <h1>Request For Quotation</h1>
+                <div>
+                    RFQ#: <?php echo $rfq_id;?><br>
+                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                    RFQ DATE :  <?php echo "".$row['rfq_date']."" ?><br>
+                </div>
             </div>
             <div class="inv-header">
-                RFQ#: <?php echo $rfq_id;?><br>
-                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                RFQ DATE :  <?php echo "".$row['rfq_date']."" ?><br>
                 <!--------------- ------------->
                 <div class="box_left">
                     <div>
