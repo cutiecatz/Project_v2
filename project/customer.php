@@ -22,7 +22,7 @@ $result = mysqli_query($conn,$userQuery);
           <th> Customer Name</th>
           <th> Address to bill</th>
           <th> Address to Ship </th>
-          <th> E-mail bill</th>
+          <th> E-mail</th>
           <th> Phone </th>
           <th> Type</th>
           <th> Edit </th>

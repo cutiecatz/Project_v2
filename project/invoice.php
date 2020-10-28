@@ -22,7 +22,7 @@ $result = mysqli_query($conn,$userQuery);
           <tr>
               <th> Invoice Number</th>
               <th> Customer </th>
-              <th> Purchase Order Date </th>
+              <th> Date </th>
               <th> View</th>
               <th> Show Document</th>
               <th> Delete</th> 

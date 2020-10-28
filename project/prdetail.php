@@ -38,7 +38,7 @@ $re2 = mysqli_query($conn,$Query);
                        
                         <?php echo "<td>".$row['qty']."</td>" ?>
                        
-                        <?php echo "<td><a href=\"podetail_delete.php?id=".$row['pr_detail_id']."\"> "?>
+                        <?php echo "<td><a href=\"prdetail_delete.php?id=".$row['pr_detail_id']."\"> "?>
             <span class="fas fa-trash-alt"></a></td>
                     
                  </tr>

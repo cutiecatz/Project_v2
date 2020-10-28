@@ -36,10 +36,6 @@ $i=1;
     </td>
 </tr>
 <tr>
-    <td>Price</td>
-    <td><input type="text" name="price" ></td>
-</tr>
-<tr>
     <td>Quantity</td>
     <td><input type="number" name="qty" ></td>
 </tr>
