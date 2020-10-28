@@ -27,14 +27,16 @@ $result3 = mysqli_query($conn,$Query);
 <body>
     <div class="container">
         <div class="document">
-            <div>
+            <div style = "justify-content: space-around">
                 <h1>Sale Order</h1>
-            </div>
-                <div class="inv-header">
+                <div>
                     Sale Order#: <?php echo $sale_id;?><br>
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?> 
                     Sale Order DATE :  <?php echo "".$row['sale_date']."" ?><br>
                     Sale Order Due DATE :  <?php echo "".$row['sale_due_date']."" ?><br>
+                </div>
+            </div>
+                <div class="inv-header">
                     <!--------------- ------------->
                     <div class="box_left">
                         <div>
