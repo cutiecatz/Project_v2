@@ -25,12 +25,12 @@ $result2 = mysqli_query($conn,$userQuery2);
                 </div>
                 <!--------------- ------------->
                 <div class = "inv-header">
-                    Inquiry#: <?php echo $inquiry_id;?><br>
+                    Inquiry#: <?php echo $inquiry_id;?>
                     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                         
                     <div class="customer">
                         <div>
-                            <h2><p class="Address-Heading">From : </p></h2>
+                            <h2 style="color : #809d87"><p class="Address-Heading"> <br><br> From : </p></h2>
                             <ul>
                                 <li>Customer Name:  <?php echo "".$row['customer_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['customer_bill']."" ?>
@@ -41,13 +41,13 @@ $result2 = mysqli_query($conn,$userQuery2);
                         </div>
                     </div>
                     <div>
-                        <table>
+                        <br><br><br><table>
                             <tr>
-                                <th> DATE : </th> 
+                                <th style="color : #809d87">  DATE : </th> 
                                 <td><?php echo "".$row['inquiry_date']."" ?><br></td>
                             </tr>
                             <tr>
-                                <th> Due DATE : </th> 
+                                <th style="color : #809d87"> Due DATE : </th> 
                                 <td> <?php echo "".$row['inquiry_due_date']."" ?></td>
                             </tr>
                             <?php }?>
