@@ -21,7 +21,7 @@ $result2 = mysqli_query($conn,$userQuery2);
     <div class="container">
         <div class="document">
                 <div class="inv-title">
-                    <h1 style="color : #809d87;">Inquiry</h1>
+                    <h1>Inquiry</h1>
                 </div>
                 <!--------------- ------------->
                 <div class = "inv-header">
@@ -30,7 +30,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                     <div class="box_left">
                         <div>
                             Inquiry#: <?php echo $inquiry_id;?>
-                            <h2 style="color : #809d87"><p class="Address-Heading"> From : </p></h2>
+                            <h2><p class="Address-Heading"> From : </p></h2>
                             <ul>
                                 <li>Customer Name:  <?php echo "".$row['customer_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['customer_bill']."" ?>
@@ -43,11 +43,11 @@ $result2 = mysqli_query($conn,$userQuery2);
                     <div>
                         <br><br><br><table>
                             <tr>
-                                <th style="color : #809d87">  DATE : </th> 
+                                <th>  DATE : </th> 
                                 <td><?php echo "".$row['inquiry_date']."" ?><br></td>
                             </tr>
                             <tr>
-                                <th style="color : #809d87"> Due DATE : </th> 
+                                <th> Due DATE : </th> 
                                 <td> <?php echo "".$row['inquiry_due_date']."" ?></td>
                             </tr>
                             <?php }?>
@@ -58,9 +58,9 @@ $result2 = mysqli_query($conn,$userQuery2);
                 <div class="inv-body">
                 <table class="product">
                         <thead>
-                            <th style="color : #809d87;">Product#</th>
-                            <th style="color : #809d87;">Product Name</th>
-                            <th style="color : #809d87;">Quantity</th>
+                            <th>Product#</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
                         </thead>
                         <?php while ($row = mysqli_fetch_assoc($result2)) { ?> 
                         <tbody>

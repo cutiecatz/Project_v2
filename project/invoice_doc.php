@@ -38,7 +38,7 @@ $result3 = mysqli_query($conn,$Query);
                     <!--------------- ------------->
                     <div class="box_left">
                         <div>
-                            <h2><p class="Address-Heading_from">From : </p></h2>
+                            <h2><p class="Address-Heading_from"> <br><br> From : </p></h2>
                             <ul>
                                 <li>Company Name:  <?php echo "".$row['company_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['company_address']."" ?>
@@ -51,7 +51,7 @@ $result3 = mysqli_query($conn,$Query);
                     <!--------------- ------------->
                     <div class="box_right">
                         <div>
-                            <h2><p class="Address-Heading_to">To : </p></h2>
+                            <h2><p class="Address-Heading_to"> <br><br> To : </p></h2>
                             <ul>
                                 <li>Customer Name:  <?php echo "".$row['customer_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['customer_bill']."" ?>
@@ -69,6 +69,7 @@ $result3 = mysqli_query($conn,$Query);
                             <thead>
                                 <th>Product#</th>
                                 <th>Product Name</th>
+                                <th>Description</th>
                                 <th>Quantity</th>
                                 <th>Discount</th>
                                 <th>Unit/Price</th>

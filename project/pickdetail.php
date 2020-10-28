@@ -18,7 +18,7 @@ $result = mysqli_query($conn,$userQuery);
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
         </head>
                 <body>
-                <H1>PICKING NO : #<?php echo $pick?></H1>
+                <H1 style="color: goldenrod;">PICKING NO : #<?php echo $pick?></H1>
                 <table width="416" border="0">
                       <tr>
                           <td width="400">Product name</td>

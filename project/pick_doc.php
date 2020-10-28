@@ -40,7 +40,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                     <!--------------- ------------->
                     <div class="box_left">
                         <div>
-                            <h2><p class="Address-Heading_from">From : </p></h2>
+                            <h2><p class="Address-Heading_from"> <br><br>  From : </p></h2>
                             <ul>
                                 <li>Name:  <?php echo "".$row['company_name']."" ?></li> 
                                 <li>Address: <?php echo "".$row['company_address']."" ?>
@@ -53,7 +53,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                     <!--------------- ------------->
                     <div class="box_right">
                         <div>
-                            <h2><p class="Address-Heading_from">To : </p></h2>
+                            <h2><p class="Address-Heading_from"> <br><br> To : </p></h2>
                             <ul>
                                 <li>Name:  <?php echo "".$row['company_name']."" ?></li>
                                 <li>Address: <?php echo "".$row['company_address']."" ?>
@@ -87,7 +87,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                                 </tr>
                             </tbody>
                     </table>
-                    <!--------------- ------------->
+                    <!--------------- -------------> <br><br>
                     <table class="stock">
                         <thead>
                             <th>Product#</th>
