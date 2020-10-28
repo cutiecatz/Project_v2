@@ -11,7 +11,17 @@ $userQuery = "SELECT * FROM `sale order`
 $result = mysqli_query($conn,$userQuery);
 $userQuery2 = "SELECT * FROM `sale detail` p join product d USING(product_id) where sale_id = '$sale_id'";
 $result2 = mysqli_query($conn,$userQuery2);
-$Query = "SELECT SUM(net) AS Total, FORMAT(SUM((net)*0.07),2) as TAX FROM `sale detail` WHERE sale_id = '$sale_id'";
+$userQuery5 = "SELECT * FROM `sale order` 
+                        JOIN quotation USING (quo_id)
+                       WHERE sale_id = $sale_id";
+$result5 = mysqli_query($conn,$userQuery5);
+$dis = 0;
+
+while ($row5 = mysqli_fetch_assoc($result5)){
+   $dis = $row5['NET_dis'];
+   $mem = $row5['member_discount'];
+}
+$Query = "SELECT SUM(net) AS Total, FORMAT(SUM((net)*0.07),2) as TAX, FORMAT(SUM((net)*(0.$dis)),2) as NetDiscount , FORMAT(SUM((net)*(0.$mem)),2) as mem FROM `sale detail` WHERE sale_id = '$sale_id'";
 $result3 = mysqli_query($conn,$Query);
 ?>
 <!doctype html>
@@ -100,12 +110,21 @@ $result3 = mysqli_query($conn,$Query);
                                     <td><?php $t = $row['Total']; ?><?php  echo "".$row['Total']."";?></td> 
                                 </tr>
                                 <tr>
-                                    <th>Tax</th>
-                                    <td>7% <?php $tax = $row['TAX']; ?></td> 
+                                    <th>Tax(7%)</th>
+                                    <td><?php $tax = $row['TAX']; ?><?php  echo "".$row['TAX']."";?></td> 
                                 </tr>
                                 <tr>
+                                    <th>Member Discount</th>
+                                    <td><?php $netdis  = $row['NetDiscount']; ?><?php  echo "".$row['NetDiscount']."";?></td> 
+                                </tr>
+                                <tr>
+                                    <th>Special Discount</th>
+                                    <td><?php $m = $row['mem']; ?><?php  echo "".$row['mem']."";?></td>  
+                                </tr>
+                                
+                                <tr>
                                     <th>Total</th>
-                                    <td><?php echo $t+$tax; ?></td> 
+                                    <td><?php echo ($t+$tax)-($netdis+$m); ?></td> 
                                 </tr>
                             </table>
                             <?php } ?>
