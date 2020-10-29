@@ -106,7 +106,7 @@ $result2 = mysqli_query($conn,$userQuery2);
                                 <?php echo "<td>".$row['product_descrip']."</td>" ?>
                                 <?php echo "<td>".$row['cut_qty']."</td>" ?>
                                 <?php echo "<td>".$row['storage_id']."</td>" ?>
-                                <?php echo "<td>".$row['product_qty']."</td>" ?>
+                                <?php echo "<td>".$row['cut_qty']."</td>" ?>
                                 <?php echo "<td>".$row['storage_id']."</td>" ?>
                                 <?php } ?>
                             </tr>

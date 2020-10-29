@@ -38,7 +38,8 @@ $result = mysqli_query($conn,$userQuery);
                 </table> 
                 <table>
                    <td><h3><a href="gr.php">Back To Goods Receipt <span class="fas fa-arrow-left"></a></h3></td> 
-                   <?php echo "<td><h3><a href=\"gr_addstock.php?id=".$gr."\">POST</a></h3></td>" ?>
+                   <?php echo "<td><h3><a href=\"gr_addstock.php?id=".$gr."\">POST" ?>
+                   <span class="fas fa-plus"></a></h3></td>
                     </table> 
                 </form> 
                 </body>
