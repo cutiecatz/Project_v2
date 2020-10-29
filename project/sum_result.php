@@ -36,7 +36,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	theme: "light2",
 	title:{
-		text: "Stock"
+		text: "Stock summary"
 	},
 	axisY: {
 		title: "Unit"
