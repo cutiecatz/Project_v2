@@ -28,22 +28,22 @@ $dataPoints[$i] =  array("y" => $qty[$i], "label" => "$name[$i]" );
 <!DOCTYPE HTML>
 <html>
 <head>
+<tr>
 <script>
 window.onload = function() {
  
- 
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
-	title: {
-		text: "SUMMARY"
+	theme: "light2",
+	title:{
+		text: "Stock"
 	},
-	subtitles: [{
-		text: "<?php echo $date."\tTO\t".$due_date ?>"
-	}],
+	axisY: {
+		title: "Unit"
+	},
 	data: [{
-		type: "pie",
-		yValueFormatString: "#,##0\" Piece\"",
-		indexLabel: "{label} ({y})",
+		type: "column",
+		yValueFormatString: "#,##0.## piece",
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
 });
@@ -51,9 +51,10 @@ chart.render();
  
 }
 </script>
+</tr>
 </head>
 <body>
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
-</html> 
+</html>
