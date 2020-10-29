@@ -12,22 +12,28 @@ require "navbar.php";
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-      <h1 class="phead"><br><br>SUMMARY<br><br></h1>
+    
+      <h1 class="head">  SUMMARY</h1>
       <div class="PO">
-        <table style="width:50%">
+        <table style="width:90%">
       <tr>
-            <th> DATE</th>
-            <th> Between</th>
-            <th> DATE</th>
+          <th> DATE</th>
+          <th> Between</th>
+          <th> DATE</th>
       </tr>
+      
       <div class="POdetail">
+      <form action="sum_result.php" method="POST" style="border:1px solid gray;">
+          <table>
               <tr>
                   <td><input type="date" name="date"></td>
                   <td></td>
                   <td><input type="date" name="due"></td>
-                  <td><input type="submit" value="submit"/>
-                  <input type="reset" value="reset"/></td>
               </tr>
+              <tr>
+    <td><input type="submit" value="submit"/></td>
+    <td><input type="reset" value="reset"/></td>
+</tr>
           </table>
       </form>
       </div>
